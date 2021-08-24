@@ -49,57 +49,57 @@ exposures = ['sun', 'half', 'shaddow']
 
 specie1 = Specie.create(
   name: 'orchidee',
-  exposure: '-',
+  exposure: exposures.sample,
   watering_frequency: 1 / rand(0..30)
 )
 
 specie2 = Specie.create(
   name: 'ortie',
-  exposure: '-',
-  watering_frequency: 3
+  exposure: exposures.sample,
+  watering_frequency: 1 / rand(0..30)
 )
 
 specie3 = Specie.create(
   name: 'jasmin',
-  exposure: '-',
-  watering_frequency: 4
+  exposure: exposures.sample,
+  watering_frequency: 1 / rand(0..30)
 )
 
 specie4 = Specie.create(
   name: 'rose',
-  exposure: '-',
-  watering_frequency: 2
+  exposure: exposures.sample,
+  watering_frequency: 1 / rand(0..30)
 )
 
 specie5 = Specie.create(
   name: 'petunia',
-  exposure: '-',
-  watering_frequency: 4
+  exposure: exposures.sample,
+  watering_frequency: 1 / rand(0..30)
 )
 specie6 = Specie.create(
   name: 'basilic',
-  exposure: '-',
-  watering_frequency: 5
+  exposure: exposures.sample,
+  watering_frequency: 1 / rand(0..30)
 )
 specie7 = Specie.create(
   name: 'mint',
-  exposure: '-',
-  watering_frequency: 4
+  exposure: exposures.sample,
+  watering_frequency: 1 / rand(0..30)
 )
 specie8 = Specie.create(
   name: 'margarita',
-  exposure: '-',
-  watering_frequency: 3,
+  exposure: exposures.sample,
+  watering_frequency: 1 / rand(0..30)
 )
 specie9 = Specie.create(
   name: 'sunflower',
-  exposure: '-',
-  watering_frequency: 3
+  exposure: exposures.sample,
+  watering_frequency: 1 / rand(0..30)
 )
 specie10 = Specie.create(
   name: 'camelia',
-  exposure: '-',
-  watering_frequency: 3
+  exposure: exposures.sample,
+  watering_frequency: 1 / rand(0..30)
 )
 
 if Specie.count == 10
@@ -184,12 +184,14 @@ eplant4 = Eplant.new(
   nickname: 'pikachu'
 )
 
-eplants = [eplant1, eplant2, eplant3, eplant4]
-
-eplants.each do |eplant|
-  eplant.user = users.sample
-  eplant.save
-end
+eplant1.user = user1
+eplant1.save
+eplant2.user = user2
+eplant2.save
+eplant3.user = user3
+eplant3.save
+eplant4.user = user4
+eplant4.save
 
 if Eplant.count == 4
   puts "4 Eplants created"
