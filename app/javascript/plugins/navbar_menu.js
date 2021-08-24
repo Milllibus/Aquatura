@@ -8,7 +8,6 @@ const nav_menu = () => {
   if (menuToggle && nav && menu) {
     menuToggle.addEventListener('click', e => {
       e.preventDefault();
-      console.log(e);
       isMenuOpen = !isMenuOpen;
 
       // toggle a11y attributes and active class
