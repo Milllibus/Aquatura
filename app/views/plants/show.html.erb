@@ -1,1 +1,10 @@
-<h3><%= @plant.nickname %> | <%= @plant.specie.name %></h3>
+<div class="specie_header">
+  <div class="plant_info">
+    <h1><%= @plant.nickname %></h1>
+    <h3><%= @plant.specie.name %></h3>
+    <div class="plant_watering">
+      <%=  image_tag("watering.png")  %>
+      <p> Watering:</p>
+    </div>
+  </div>
+</div>
