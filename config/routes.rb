@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :plants, only: %i[create show destroy]
+  resources :plants, only: %i[index create show destroy]
   resources :species, only: %i[index show]
   resources :waterings, only: %i[create]
   resources :eplants, only: %i[new create show update]
