@@ -19,6 +19,3 @@ class Scraper
     p  "========="
   end
 end
-
-scrape = Scraper.new
-scrape.scrap
