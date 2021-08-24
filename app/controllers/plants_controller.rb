@@ -19,6 +19,8 @@ class PlantsController < ApplicationController
   end
 
   def destroy
+    @plant.destroy
+    redirect_to plants_path
   end
 
   private
