@@ -7,10 +7,11 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     @plant.user = current_user
+    @plant.specie = Specie.find(params[:specie_id])
     if @plant.save
-      redirect_to plant_path
+      redirect_to plant_path(@plant)
     else
-      redirect_to specie_path
+      redirect_to specie_path(@plant.specie)
     end
   end
 

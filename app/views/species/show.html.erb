@@ -1,2 +1,8 @@
 <%= @specie.name %>
-<%= @specie %>
+<%# <%= @specie.description %>
+<%= simple_form_for [ @specie, @plant ] do |f| %>
+  <%= f.input :nickname %>
+  <%= f.input :exposure %>
+  <%= f.submit "add my plant", class: "btn btn-primary" %>
+<% end %>
+<%= console %>
