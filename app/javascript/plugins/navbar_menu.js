@@ -1,5 +1,5 @@
 
-const nav_menu = () => {
+const navMenu = () => {
   const nav = document.querySelector('#nav');
   const menu = document.querySelector('#menu');
   const menuToggle = document.querySelector('.nav__toggle');
@@ -41,4 +41,4 @@ const nav_menu = () => {
   // });
 }
 
-export { nav_menu };
+export { navMenu };
