@@ -19,8 +19,12 @@
   transition: 3s;
 }
 
-.margin-left {
-  margin-left: 100vw;
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
 }
 
 .nav__menu {
@@ -60,6 +64,8 @@
 
   &:hover,
   &:focus {
+    color: white;
+    text-decoration: none;
     outline:0;
     background-color:rgba(0,0,0,0.2);
   }

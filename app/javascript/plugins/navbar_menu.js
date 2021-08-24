@@ -5,7 +5,7 @@ const navMenu = () => {
   if ( menuToggle && menuDiv ) {
     menuToggle.addEventListener('click', e => {
       e.preventDefault();
-      menuDiv.classList.toggle('d-none');
+      menuDiv.classList.toggle('hidden');
       e.currentTarget.classList.toggle('rotate');
     });
   }
