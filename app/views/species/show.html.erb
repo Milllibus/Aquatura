@@ -1,3 +1,4 @@
+
 <div class="container">
   <h2><%= @specie.name %></h2>
   <img src="" alt="">
@@ -5,3 +6,13 @@
 
 
 </div>
+
+<%= @specie.name %>
+<%# <%= @specie.description %>
+<%= simple_form_for [ @specie, @plant ] do |f| %>
+  <%= f.input :nickname %>
+  <%= f.input :exposure %>
+  <%= f.submit "add my plant", class: "btn btn-primary" %>
+<% end %>
+<%= console %>
+
