@@ -1,17 +1,21 @@
- <nav id="nav" class="nav" role="navigation">
+<nav id="nav" class="nav" role="navigation">
+  <%= link_to image_tag("logo-plant"), root_path %>
+  <a href="#nav" class="nav__toggle" id="nav__toggle"><%= image_tag("menu_black") %></a>
+  <div id="menu" class='d-none'>
+    <ul class="nav__menu ">
+      <li class="nav__item"><%= link_to 'Home', root_path, class: "nav__link" %></li>
+      <li class="nav__item"><a href="#" class="nav__link">Plants</a></li>
+      <li class="nav__item"><a href="#" class="nav__link">Calendar</a></li>
+      <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+      <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-      <!-- ACTUAL NAVIGATION MENU -->
-      <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation" hidden>
-        <li class="nav__item"><%= link_to 'Home', root_path, class: "nav__link" %></li>
-        <li class="nav__item"><a href="#" class="nav__link">Plants</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Calendar</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
-      </ul>
 
-      <!-- MENU TOGGLE BUTTON -->
+      <!-- MENU TOGGLE BUTTON
       <%= link_to image_tag("logo-plant"), root_path %>
-      <a href="#nav" class="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
+      <a href="#nav" class="nav__toggle" role="button">
         <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
           <title>Toggle Menu</title>
           <g>
@@ -22,9 +26,4 @@
             <circle class="menuicon__circle" r="23" cx="25" cy="25" />
           </g>
         </svg>
-      </a>
-
-      <!-- ANIMATED BACKGROUND ELEMENT -->
-      <div class="splash"></div>
-
-    </nav>
+      </a> -->

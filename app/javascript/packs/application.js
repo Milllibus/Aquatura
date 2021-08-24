@@ -30,6 +30,7 @@ import { navMenu } from "../plugins/navbar_menu"
 import { bottomMenu } from "../plugins/bottom_menu"
 
 document.addEventListener('turbolinks:load', () => {
-  navMenu();
   bottomMenu();
+  navMenu();
+
 });
