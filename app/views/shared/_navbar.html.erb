@@ -1,6 +1,6 @@
 <nav id="nav" class="nav" role="navigation">
-  <%= link_to image_tag("logo-plant"), root_path %>
-  <a href="#nav" class="nav__toggle" id="nav__toggle"><%= image_tag("menu_black") %></a>
+  <%= link_to inline_svg_tag("logo-plant.svg"), root_path %>
+  <a href="#nav" class="nav__toggle" id="nav__toggle"><%= inline_svg_tag("menu_black.svg") %></a>
   <div id="menu" class='hidden'>
     <ul class="nav__menu ">
       <li class="nav__item"><%= link_to 'Home', root_path, class: "nav__link" %></li>
@@ -11,6 +11,7 @@
     </ul>
   </div>
 </nav>
+
 
 
       <!-- MENU TOGGLE BUTTON

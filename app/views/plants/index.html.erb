@@ -1,0 +1,6 @@
+<% @plants.each do |plant| %>
+  <div>
+    <h3><%= plant.nickname %> | <%= plant.specie.name %></h3>
+    <%= link_to "Remove", plant, method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+<% end %>
