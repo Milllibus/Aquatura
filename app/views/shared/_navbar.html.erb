@@ -1,6 +1,17 @@
 <nav id="nav" class="nav" role="navigation">
   <%= link_to inline_svg_tag("logo-plant.svg"), root_path %>
-  <a href="#nav" class="nav__toggle" id="nav__toggle"><%= inline_svg_tag("menu_black.svg") %></a>
+  <a href="#nav" class="nav__toggle" id="nav__toggle">
+    <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+      <title>Toggle Menu</title>
+      <g>
+        <line class="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5"/>
+        <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
+        <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
+        <line class="menuicon__bar" x1="13" y1="32.5" x2="37" y2="32.5"/>
+        <circle class="menuicon__circle" r="23" cx="25" cy="25" />
+      </g>
+    </svg>
+  </a>
   <div id="menu" class='hidden'>
     <ul class="nav__menu ">
       <li class="nav__item"><%= link_to 'Home', root_path, class: "nav__link" %></li>
@@ -11,20 +22,3 @@
     </ul>
   </div>
 </nav>
-
-
-
-      <!-- MENU TOGGLE BUTTON
-      <%= link_to image_tag("logo-plant"), root_path %>
-      <a href="#nav" class="nav__toggle" role="button">
-        <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
-          <title>Toggle Menu</title>
-          <g>
-            <line class="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5"/>
-            <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
-            <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
-            <line class="menuicon__bar" x1="13" y1="32.5" x2="37" y2="32.5"/>
-            <circle class="menuicon__circle" r="23" cx="25" cy="25" />
-          </g>
-        </svg>
-      </a> -->

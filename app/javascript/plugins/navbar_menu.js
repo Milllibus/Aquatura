@@ -6,7 +6,7 @@ const navMenu = () => {
     menuToggle.addEventListener('click', e => {
       e.preventDefault();
       menuDiv.classList.toggle('hidden');
-      e.currentTarget.classList.toggle('rotate');
+      e.currentTarget.classList.toggle('nav--open');
     });
   }
 }
