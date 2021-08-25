@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="search-bar" data-controller="search-species">
+  <div data-controller="search-species">
     <%= form_with url: species_path,
       method: :get,
       html: { class: 'mb-4', data: { search_species_target: 'form' } } do |f|
     %>
     <%= f.text_field :query,
-      class: "form-control",
+      class: "form-control search-bar",
       placeholder: 'Type a plant species',
       value: params[:query],
       data: {
