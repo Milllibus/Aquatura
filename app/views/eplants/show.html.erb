@@ -24,6 +24,6 @@
     <% if @eplant.level >= 110 %><div class="petal petal-6"></div><% end %>
     <% if @eplant.level >= 130 %><div class="petal petal-1"></div><% end %>
     <% if @eplant.level >= 150 %><div class="petal petal-2"></div><% end %>
-    <div class="dot"></div>
+    <% if @eplant.level >= 50 %><div class="dot"></div><% end %>
   </div>
 </div>
