@@ -1,0 +1,9 @@
+<div class="container mt-3">
+  <h1>Hello <%= @user.username %>!</h1>
+
+  <div class="add-button">
+    <%= link_to species_path do %>
+      <%= icon('fas', 'plus-circle') %>  Add a new plant
+    <% end %>
+  </div>
+</div>
