@@ -34,3 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   nav_menu();
 });
+
+import "controllers"

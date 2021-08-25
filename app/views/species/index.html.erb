@@ -1,3 +1,22 @@
-<% @species.each do |specie| %>
-<%= specie.name %>
-<% end %>
+<div class="container">
+  <div class="search-bar" data-controller="search-species">
+    <%= form_with url: species_path,
+      method: :get,
+      html: { class: 'mb-4', data: { search_species_target: 'form' } } do |f|
+    %>
+    <%= f.text_field :query,
+      class: "form-control",
+      placeholder: 'Type a plant species',
+      value: params[:query],
+      data: {
+        search_species_target: 'input',
+        action: 'keyup->search-species#update'}
+    %>
+    <% end %>
+    <div class="cards-list">
+      <%= render 'list', species: @species %>
+    </div>
+  </div>
+
+
+</div>
