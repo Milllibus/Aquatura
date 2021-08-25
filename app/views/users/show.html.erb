@@ -12,4 +12,25 @@
       <%= icon('fas', 'plus-circle') %> Visit <%= @user.eplant.nickname.capitalize %>
     <% end %>
   </div>
+
+  <div class="cards mt-3">
+    <% @plants.each do |plant| %>
+      <div class="card-species">
+        <div class="card-species-img">
+          <%= link_to plant_path(plant.id) do %>
+            <%= image_tag plant.specie.image_url %>
+          <% end %>
+        </div>
+        <div class="card-species-infos">
+          <%= link_to plant_path(plant.id) do %>
+            <h2><%= plant.nickname %></h2>
+            <p> <%= plant.specie.name %></p>
+          <% end %>
+        </div>
+        <div class="check-item">
+           <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(plant.id), method: :post %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

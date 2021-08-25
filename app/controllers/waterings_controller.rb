@@ -1,10 +1,11 @@
 class WateringsController < ApplicationController
   def create
-    @plant = Plant.find(params[:id])
+    @plant = Plant.find(params[:plant_id])
     @watering = Watering.new
     @watering.plant = @plant
     @watering.save
     watering_eplant
+    redirect_to user_path(current_user)
   end
 
   private
