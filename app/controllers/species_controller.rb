@@ -10,10 +10,11 @@ class SpeciesController < ApplicationController
 
     if params[:query].present?
       @species = @species.where('name ILIKE ?', "%#{params[:query]}%")
-      respond_to do |format|
-        format.html
-        format.text { render partial: 'species/list', locals: { species: @specis }, formats: [:html] }
-      end
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'species/list', locals: { species: @species }, formats: [:html] }
     end
   end
 end

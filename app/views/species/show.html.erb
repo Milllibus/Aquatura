@@ -1,18 +1,17 @@
-
-<div class="container">
-  <h2><%= @specie.name %></h2>
-  <img src="" alt="">
-  <p> Plant description </p>
-
-
+<div class="specie-container">
+  <div class="specie-header">
+    <h2><%= @specie.name %></h2>
+    <%#= image_tag @specie.image_url %>
+    <%#= @specie.description %>
+  </div>
+  <div class="add-plant-form">
+    <%= simple_form_for [ @specie, @plant ] do |f| %>
+      <%= f.input :nickname %>
+      <%= f.input :exposure %>
+      <button name="button" type="submit" class="button">
+        add
+      </button>
+      <%#= f.submit "add my plant", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
-
-<%= @specie.name %>
-<%# <%= @specie.description %>
-<%= simple_form_for [ @specie, @plant ] do |f| %>
-  <%= f.input :nickname %>
-  <%= f.input :exposure %>
-  <%= f.submit "add my plant", class: "btn btn-primary" %>
-<% end %>
-<%= console %>
-
