@@ -10,14 +10,14 @@
     <div class="water-jar"></div>
     <div class="water"></div>
     <div class="flower">
-      <div class="stem"></div>
-      <div class="leaf"></div>
-      <div class="petal petal-1"></div>
-      <div class="petal petal-2"></div>
-      <div class="petal petal-3"></div>
-      <div class="petal petal-4"></div>
-      <div class="petal petal-5"></div>
-      <div class="petal petal-6"></div>
+      <% if @eplant.level >=10 %><div class="stem"></div><% end %>
+      <% if @eplant.level >= 30 %><div class="leaf"></div><% end %>
+      <% if @eplant.level >= 50 %><div class="petal petal-3"></div><% end %>
+      <% if @eplant.level >= 70 %><div class="petal petal-4"></div><% end %>
+      <% if @eplant.level >= 90 %><div class="petal petal-5"></div><% end %>
+      <% if @eplant.level >= 110 %><div class="petal petal-6"></div><% end %>
+      <% if @eplant.level >= 130 %><div class="petal petal-1"></div><% end %>
+      <% if @eplant.level >= 150 %><div class="petal petal-2"></div><% end %>
       <div class="dot"></div>
     </div>
   </div>
