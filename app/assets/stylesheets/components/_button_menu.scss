@@ -1,7 +1,7 @@
 
 .button-menu {
   position: sticky;
-  left: 94px;
+  margin: auto;
   bottom: 24px;
   display: flex;
   justify-content: space-between;
@@ -9,7 +9,8 @@
   border-radius: 32px;
   width: 164px;
   padding: 12px 24px;
-  a img {
+  a svg {
     width: 40px;
+    height: auto;
   }
 }
