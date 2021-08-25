@@ -25,10 +25,6 @@ class Scraper
       description: plant_description,
       image_url: plant_image_url
     }
-
   end
   # rubocop:enable Metrics/MethodLength
 end
-
-scraper = Scraper.new
-scraper.scrap('jasmine')
