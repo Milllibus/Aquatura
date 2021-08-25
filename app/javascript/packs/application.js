@@ -26,11 +26,11 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-import { nav_menu } from "../plugins/navbar_menu"
+import { navMenu } from "../plugins/navbar_menu"
+import { bottomMenu } from "../plugins/bottom_menu"
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  nav_menu();
+  bottomMenu();
+  navMenu();
+
 });
