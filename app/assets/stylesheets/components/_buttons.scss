@@ -1,0 +1,29 @@
+.add-button {
+  border: 1px solid $gold-yellow;
+  padding: 24px 22px;
+  border-radius: 8px;
+  margin-top: 20px;
+  a {
+    color: $gold-yellow;
+    font-family: 'Comfortaa';
+    font-size: 18px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.eplant-button {
+  border: 1px solid $dark-green;
+  padding: 24px 22px;
+  border-radius: 8px;
+  margin-top: 20px;
+  a {
+    color: $dark-green;
+    font-family: 'Comfortaa';
+    font-size: 18px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
