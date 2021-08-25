@@ -50,56 +50,66 @@ exposures = ['sun', 'half', 'shaddow']
 specie1 = Specie.create(
   name: 'orchidee',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 
 specie2 = Specie.create(
   name: 'ortie',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 
 specie3 = Specie.create(
   name: 'jasmin',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 
 specie4 = Specie.create(
   name: 'rose',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 
 specie5 = Specie.create(
   name: 'petunia',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 specie6 = Specie.create(
   name: 'basilic',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 specie7 = Specie.create(
   name: 'mint',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 specie8 = Specie.create(
   name: 'margarita',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 specie9 = Specie.create(
   name: 'sunflower',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 specie10 = Specie.create(
   name: 'camelia',
   exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
+  watering_frequency: rand(0..30),
+  description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
 )
 
 if Specie.count == 10

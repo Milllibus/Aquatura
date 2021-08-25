@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <h1>Hello <%= @user.username %>!</h1>
+
+  <div class="add-button">
+    <%= link_to species_path do %>
+      <%= icon('fas', 'plus-circle') %> Add a new plant
+    <% end %>
+  </div>
+
+  <div class="eplant-button">
+    <%= link_to eplant_path(@user.eplant.id) do %>
+      <%= icon('fas', 'plus-circle') %> Visit <%= @user.eplant.nickname.capitalize %>
+    <% end %>
+  </div>
+</div>
