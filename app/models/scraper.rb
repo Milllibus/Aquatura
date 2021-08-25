@@ -4,7 +4,7 @@ require 'open-uri'
 # rubocop:disable Metrics/MethodLength
 class Scraper
   def scrap
-    plant_name = "jasmine"
+    plant_name = "lily"
     url = "https://www.monrovia.com/catalogsearch/result/?q=#{plant_name}"
 
     html_file = URI.open(url).read
@@ -18,10 +18,12 @@ class Scraper
 
     plant_name = plant_html_doc.search('.base').text.strip
     plant_description = plant_html_doc.search('.overview').text.strip
+    plant_image_url = plant_html_doc.search('.gallery-placeholder img').first.attribute('src').value
     # plant_watering = plant.search('.caracteristique')[1].search('span').attr('class').value
     p "============"
     p plant_name
     p plant_description
+    p plant_image_url
     p "========="
   end
   # rubocop:enable Metrics/MethodLength
