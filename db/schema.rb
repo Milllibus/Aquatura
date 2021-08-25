@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_155356) do
+ActiveRecord::Schema.define(version: 2021_08_25_125221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_155356) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+    t.string "image_url", default: "https://www.monrovia.com/media/catalog/product/cache/e5452c18e1c4fefc7252403522e22bd5/r/e/rest_1_1_11601.jpeg"
   end
 
   create_table "users", force: :cascade do |t|
