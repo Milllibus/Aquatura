@@ -8,18 +8,18 @@
 require 'faker'
 require 'csv'
 
+Plant.delete_all
+if Plant.count.zero?
+  puts "All plants have been destroy"
+else
+  puts "error deleting plants"
+end
+
 Specie.delete_all
 if Specie.count.zero?
   puts "All species have been destroy"
 else
   puts "error deleting species"
-end
-
-User.delete_all
-if User.count.zero?
-  puts "All users have been destroy"
-else
-  puts "error deleting users"
 end
 
 Eplant.delete_all
@@ -29,12 +29,15 @@ else
   puts "error deleting Eplants"
 end
 
-Plant.delete_all
-if Plant.count.zero?
-  puts "All plants have been destroy"
+User.delete_all
+if User.count.zero?
+  puts "All users have been destroy"
 else
-  puts "error deleting plants"
+  puts "error deleting users"
 end
+
+
+
 
 Watering.delete_all
 if Watering.count.zero?
@@ -43,72 +46,97 @@ else
   puts "error deleting waterings"
 end
 
-# 10 species
+# species
 
 exposures = ['sun', 'half', 'shaddow']
+species_search = ['cactus', 'dahlia', 'jasmine', 'Safari Sunset Aloe', 'geranium caliente', 'ficus',
+                  'Bougainvillea', 'azalea', 'Painted Lady Echeveria', 'Ruffles Echeveria',
+                  'Rojo Congo Philodendron', 'Elephant Ear', 'Southern Splendor Cordyline',
+                  'Bunny Ears', 'Yellow Groove Bamboo', 'Picturata Aucuba', 'Pink Parade Camellia',
+                  'Cherie Hibiscus', 'Pindo Palm', 'White Swan Coneflower']
 
-specie1 = Specie.create(
-  name: 'orchidee',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
+species = []
 
-specie2 = Specie.create(
-  name: 'ortie',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
+species_search.each do |specie|
+  scraper = Scraper.new
+  attributes = scraper.scrap(specie)
+  new_specie = Specie.new(attributes)
+  new_specie.exposure = exposures.sample
+  new_specie.watering_frequency = rand(2..21)
+  new_specie.save
+  species << new_specie
+end
 
-specie3 = Specie.create(
-  name: 'jasmin',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
+# specie1 = Specie.create(
+#   name: 'orchidee',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
 
-specie4 = Specie.create(
-  name: 'rose',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
+# specie2 = Specie.create(
+#   name: 'ortie',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
 
-specie5 = Specie.create(
-  name: 'petunia',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
-specie6 = Specie.create(
-  name: 'basilic',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
-specie7 = Specie.create(
-  name: 'mint',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
-specie8 = Specie.create(
-  name: 'margarita',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
-specie9 = Specie.create(
-  name: 'sunflower',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
-specie10 = Specie.create(
-  name: 'camelia',
-  exposure: exposures.sample,
-  watering_frequency: 1 / rand(0..30)
-)
+# specie3 = Specie.create(
+#   name: 'jasmin',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
 
-if Specie.count == 10
-  puts "10 species created"
+# specie4 = Specie.create(
+#   name: 'rose',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
+
+# specie5 = Specie.create(
+#   name: 'petunia',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
+# specie6 = Specie.create(
+#   name: 'basilic',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
+# specie7 = Specie.create(
+#   name: 'mint',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
+# specie8 = Specie.create(
+#   name: 'margarita',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
+# specie9 = Specie.create(
+#   name: 'sunflower',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
+# specie10 = Specie.create(
+#   name: 'camelia',
+#   exposure: exposures.sample,
+#   watering_frequency: rand(0..30),
+#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
+# )
+
+if Specie.count == species_search.size
+  puts "#{species.size} species created"
 else
   puts "error creating species"
 end
-
-species = [specie1, specie2, specie3, specie4, specie5, specie6, specie7, specie8, specie9, specie10]
 
 # 4 users
 
@@ -143,10 +171,10 @@ user4 = User.create(
 users = [user1, user2, user3, user4]
 
 locations = ['155	Rue Commandant Caroline Aigle	13090	Aix-en-Provence', "7	Rue de l'Abbé Bremond	13090	Aix-en-Provence",
-          "1 Rue Achille Emperaire	13090	Aix-en-Provence", "1	Rue des Alizés	13090	Aix-en-Provence",
-          "6	Allée des Amandiers	13100	Aix-en-Provence", "8	Passage Agard	13100	Aix-en-Provence",
-        "35	Chemin Albert Guigou	13290	Aix-en-Provence", "8	Traverse de l'Aigle d'Or	13100	Aix-en-Provence",
-      "2	Place Aimé Gazel	13290	Aix-en-Provence", "2	Avenue Albert Baudoin	13090	Aix-en-Provence"]
+             "1 Rue Achille Emperaire	13090	Aix-en-Provence", "1	Rue des Alizés	13090	Aix-en-Provence",
+             "6	Allée des Amandiers	13100	Aix-en-Provence", "8	Passage Agard	13100	Aix-en-Provence",
+             "35	Chemin Albert Guigou	13290	Aix-en-Provence", "8	Traverse de l'Aigle d'Or	13100	Aix-en-Provence",
+             "2	Place Aimé Gazel	13290	Aix-en-Provence", "2	Avenue Albert Baudoin	13090	Aix-en-Provence"]
 
 n = 0
 

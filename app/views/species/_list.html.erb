@@ -1,0 +1,17 @@
+<div data-search-species-target="list">
+    <% @species.each do |specie| %>
+    <div class="card-species">
+      <div class="card-species-img">
+        <%= link_to specie_path(specie.id) do %>
+          <%= image_tag specie.image_url %>
+        <% end %>
+      </div>
+      <div class="card-species-infos">
+        <%= link_to specie_path(specie.id) do %>
+          <h2><%= specie.name %></h2>
+          <p> <%= specie.description %></p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+</div>
