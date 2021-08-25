@@ -11,3 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: $dark-green;
+}
