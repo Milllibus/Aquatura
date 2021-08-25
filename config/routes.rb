@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get '/users/:id', to: 'users#show'
+  get '/users/:id', to: 'users#show', as: 'user'
   resources :plants, only: %i[index show destroy]
   get '/species', to: 'species#index'
   get '/species/:id', to: 'species#show', as: 'specie'
