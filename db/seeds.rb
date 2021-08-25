@@ -46,7 +46,7 @@ else
   puts "error deleting waterings"
 end
 
-# 10 species
+# species
 
 exposures = ['sun', 'half', 'shaddow']
 species_search = ['cactus', 'dahlia', 'jasmine', 'Safari Sunset Aloe', 'geranium caliente', 'ficus',
