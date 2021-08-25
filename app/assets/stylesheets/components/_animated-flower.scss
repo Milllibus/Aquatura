@@ -1,17 +1,22 @@
-.animated_flower {
-	margin: 0;
-	padding: 0;
-	background-color: #95d0ff;
-}
-.container{
-	position: absolute;
-	margin: auto;
+.eplant-contain {
+  position: absolute;
+  margin-top: 250px!important;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-    width:350px;
-    height:510px;
+  width:350px;
+  height:510px;
+}
+.title-eplant {
+  margin-top: 104px;
+  width:350px;
+}
+.center {
+  color: $dark-green;
+  font-family: 'Comfortaa';
+  text-align: center;
+  font-size: 24px;
 }
 .sun{
 	height: 0;

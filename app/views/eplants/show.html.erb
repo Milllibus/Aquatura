@@ -1,24 +1,29 @@
-
-<div class="animated_flower">
-  <div class="container">
-    <div class="sun">
-      <div class="sunrays"></div>
-      <div class="circle"></div>
+<div class="container title-eplant">
+  <h2>Hello, I'm <%= @eplant.nickname %>!</h2>
+  <div class="eplant-button">
+    <div class="center">
+      <span class="center"> Level <%= @eplant.level %> </span>
     </div>
-    <div class="shadow"></div>
-    <div class="pot"></div>
-    <div class="water-jar"></div>
-    <div class="water"></div>
-    <div class="flower">
-      <% if @eplant.level >=10 %><div class="stem"></div><% end %>
-      <% if @eplant.level >= 30 %><div class="leaf"></div><% end %>
-      <% if @eplant.level >= 50 %><div class="petal petal-3"></div><% end %>
-      <% if @eplant.level >= 70 %><div class="petal petal-4"></div><% end %>
-      <% if @eplant.level >= 90 %><div class="petal petal-5"></div><% end %>
-      <% if @eplant.level >= 110 %><div class="petal petal-6"></div><% end %>
-      <% if @eplant.level >= 130 %><div class="petal petal-1"></div><% end %>
-      <% if @eplant.level >= 150 %><div class="petal petal-2"></div><% end %>
-      <div class="dot"></div>
-    </div>
+  </div>
+</div>
+<div class="container eplant-contain">
+  <div class="sun">
+    <div class="sunrays"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="shadow"></div>
+  <div class="pot"></div>
+  <div class="water-jar"></div>
+  <div class="water"></div>
+  <div class="flower">
+    <% if @eplant.level >=10 %><div class="stem"></div><% end %>
+    <% if @eplant.level >= 30 %><div class="leaf"></div><% end %>
+    <% if @eplant.level >= 50 %><div class="petal petal-3"></div><% end %>
+    <% if @eplant.level >= 70 %><div class="petal petal-4"></div><% end %>
+    <% if @eplant.level >= 90 %><div class="petal petal-5"></div><% end %>
+    <% if @eplant.level >= 110 %><div class="petal petal-6"></div><% end %>
+    <% if @eplant.level >= 130 %><div class="petal petal-1"></div><% end %>
+    <% if @eplant.level >= 150 %><div class="petal petal-2"></div><% end %>
+    <div class="dot"></div>
   </div>
 </div>
