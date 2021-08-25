@@ -1,0 +1,55 @@
+/* Style the tab */
+.tabs-container {
+  background-color: $dark-green;
+  position: relative;
+  bottom: 5rem;
+}
+.tab {
+  background-color: $dark-green;
+  overflow: hidden;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: white;
+  color: $dark-green;
+  opacity: 0.6;
+  width: 33.3333%;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  &.active-btn {
+    color: $yellow;
+    opacity: 1;
+  }
+}
+
+.top-left {
+  border-top-left-radius: 20px;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+
+}
+
+.active {
+  background-color: white;
+  display: block;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  height: 66vh;
+  padding-top: 8px;
+}
