@@ -11,7 +11,21 @@
   position: relative;
   color: white;
   padding: 16px;
+
+  img {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  h3 {
+    color: white;
+  }
 }
+
+
 
 .add-plant-form {
   background-color: white;

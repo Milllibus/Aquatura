@@ -1,13 +1,13 @@
 <div class="specie-container">
   <div class="specie-header">
-    <h2><%= @specie.name %></h2>
-    <%#= image_tag @specie.image_url %>
-    <%#= @specie.description %>
+    <h3><%= @specie.name %></h3>
+    <%= image_tag @specie.image_url %>
+    <%= @specie.description %>
   </div>
   <div class="add-plant-form">
     <%= simple_form_for [ @specie, @plant ] do |f| %>
-      <%= f.input :nickname %>
-      <%= f.input :exposure %>
+      <%= f.input :nickname, label: false %>
+      <%= f.input :exposure, label: false %>
       <button name="button" type="submit" class="button">
         add
       </button>
