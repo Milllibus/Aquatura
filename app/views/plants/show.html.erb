@@ -1,10 +1,38 @@
-<div class="specie_header">
-  <div class="plant_info">
-    <h1><%= @plant.nickname %></h1>
-    <h3><%= @plant.specie.name %></h3>
-    <div class="plant_watering">
-      <%=  image_tag("watering.png")  %>
-      <p> Watering:</p>
+<div class="specie-header">
+  <div class="plant-show-container">
+    <div class="plant-info">
+      <h2><%= @plant.nickname %></h2>
+      <p><%= @plant.specie.name %></p>
+      <div class="plant-watering">
+        <%=  image_tag("watering.png")  %>
+        <p> Water in <br> 6(?) days</p>
+      </div>
+    </div>
+
+    <div class="tabs-container">
+      <!-- Tab links -->
+      <div class="tab">
+        <button class="tablinks">About</button>
+        <button class="tablinks">Calendar</button>
+        <button class="tablinks">Friends</button>
+      </div>
+      <!-- Tab contents -->
+      <div class="tab-contents">
+        <div id="about" class="tabcontent">
+          <h1>About</h1>
+          <p><%= @plant.specie.description %></p>
+        </div>
+
+        <div id="calendar" class="tabcontent">
+          <h1>Calendar</h1>
+          <p>Here will be the watering calendar, where tf is it ??</p>
+        </div>
+
+        <div id="friends" class="tabcontent">
+          <h1>Friends</h1>
+          <p>Allo ? la friends list ?</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
