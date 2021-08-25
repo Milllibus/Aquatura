@@ -12,24 +12,21 @@
     <div class="tabs-container">
       <!-- Tab links -->
       <div class="tab">
-        <button class="tablinks">About</button>
-        <button class="tablinks">Calendar</button>
-        <button class="tablinks">Friends</button>
+        <button class="tablinks top-left active-btn" data-tab="about">About</button>
+        <button class="tablinks" data-tab="calendar">Calendar</button>
+        <button class="tablinks" data-tab="friends">Friends</button>
       </div>
       <!-- Tab contents -->
       <div class="tab-contents">
-        <div id="About" class="tabcontent">
-          <h1>About</h1>
+        <div id="about" class="tabcontent active">
           <p><%= @plant.specie.description %></p>
         </div>
 
-        <div id="Calendar" class="tabcontent">
-          <h1>Calendar</h1>
+        <div id="calendar" class="tabcontent">
           <p>Here will be the watering calendar, where tf is it ??</p>
         </div>
 
-        <div id="Friends" class="tabcontent">
-          <h1>Friends</h1>
+        <div id="friends" class="tabcontent">
           <p>Allo ? la friends list ?</p>
         </div>
       </div>

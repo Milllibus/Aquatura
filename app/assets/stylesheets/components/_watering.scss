@@ -1,5 +1,7 @@
 .plant-show-container {
   background-color: $dark-green;
+  position: absolute;
+  height: calc(100vh - 80px);
 }
 
 .plant-info {
@@ -22,7 +24,7 @@
   font-size: 8px;
   position: relative;
   left: 85%;
-  top: -85px;
+  top: -84px;
 }
 
 .plant-watering img {
