@@ -26,10 +26,20 @@
 }
 
 
+.form-control{
+  border-radius: 33px;
+  text-align: center;
+  border: 2px solid $dark-green;
+
+  &::placeholder {
+  font-family: $headers-font;
+  color: $dark-green;
+
+}
+}
 
 .add-plant-form {
   background-color: white;
-  opacity: .85;
   padding: 20px;
   border-radius: 16px 16px 0px 0px;
   box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
@@ -49,6 +59,10 @@
     width: 96px;
     height: 32px;
     margin-left: 16px;
+  }
+
+  h3{
+    color: $gold-yellow;
   }
 }
 
