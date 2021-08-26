@@ -9,8 +9,13 @@
     <div class="water-needs">
       <h3>Water needs</h3>
         <div class="water-drops">
-        <p><i class="fas fa-tint"></i><i class="fas fa-tint"></i><i class="fas fa-tint"></i></p>
-        <%= @specie.watering_frequency %>
+        <% if @specie.watering_frequency < 8 %>
+          <p><i class="fas fa-tint" style="color: blue; "></i><i class="fas fa-tint"></i><i class="fas fa-tint"></i></p>
+        <% elsif @specie.watering_frequency >= 8 && @specie.watering_frequency < 17 %>
+          <p><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint"></i></p>
+        <% else %>
+          <p><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint" style="color: blue;"></i></p>
+        <% end %>
       </div>
     </div>
     <div class="light-exposure">

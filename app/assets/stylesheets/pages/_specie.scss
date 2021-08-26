@@ -3,7 +3,7 @@
 }
 .specie-container {
   background-color: $dark-green;
-  min-height: 1000px;
+  height: 1000px;
   bottom: 0px;
 }
 
@@ -14,6 +14,8 @@
 
   img {
     width: 100%;
+    height: 240px;
+    object-fit: cover;
     margin-top: 8px;
     margin-bottom: 8px;
     border-radius: 16px;
@@ -31,6 +33,16 @@
 
   h3{
     border-bottom: 1px solid white;
+  }
+}
+
+.water-drops {
+  color: rgba(255, 255, 255, 0.342);
+  font-size: 48px;
+
+  i{
+    margin-right: 16px;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
   }
 }
 
