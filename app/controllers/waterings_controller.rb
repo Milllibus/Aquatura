@@ -2,6 +2,7 @@ class WateringsController < ApplicationController
   def create
     @plant = Plant.find(params[:plant_id])
     @watering = Watering.new
+    authorize @watering
     @watering.plant = @plant
     @watering.save
     watering_eplant
