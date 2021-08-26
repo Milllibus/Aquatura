@@ -21,8 +21,8 @@
   box-sizing: border-box;
   width: 100%;
   font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
+  text-align: center;
+  padding: 10px 10px 10px 8px;
   border: 1px solid #EAEAEA;
   border-radius: 50%;
   width: 48px;
@@ -36,30 +36,33 @@
 
 
 #plant_exposure_sun + label {
-  color: #FD1015;
+  color: rgb(223, 226, 23);
+  border-color: rgb(223, 226, 23);
 }
 
 #plant_exposure_sun:checked + label {
-  background-color: #FD1015;
-  border-color: #FD1015;
+  background-color: rgb(223, 226, 23);
+  border-color: rgb(223, 226, 23);
 }
 
 
 #plant_exposure_half + label {
-  color: #FFC65A;
+  color: #6c6d3f;
+  border-color: #6c6d3f;
 }
 
 #plant_exposure_half:checked + label {
-  background-color: #FFC65A;
-  border-color: #FFC65A;
+  background-color: #6c6d3f;
+  border-color: #6c6d3f;
 }
 
 
 #plant_exposure_shade + label {
-  color: #62DDF5;
+  color: #000000;
+  border-color: #000000;
 }
 
 #plant_exposure_shade:checked + label {
-  background-color: #62DDF5;
-  border-color: #62DDF5;
+  background-color: #000000;
+  border-color: #000000;
 }
