@@ -7,10 +7,28 @@
   <div class="add-plant-form">
     <%= simple_form_for [ @specie, @plant ] do |f| %>
       <%= f.input :nickname, label: false %>
-      <%= f.input :exposure, label: false %>
-      <button name="button" type="submit" class="button">
-        add
-      </button>
+      <div class="form-buttons">
+        <fieldset class="form-group radio_buttons required snippet_exposure">
+            <div class="exposure-wrapper">
+              <input type="hidden" name="snippet[exposure_id]" value="">
+              <div class="exposure-item">
+                <%= f.input :exposure,
+                  as: :radio_buttons,
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'exposure-wrapper',
+                  item_wrapper_class: 'exposure-item',
+                  input_html: {class: 'exposure-selector'},
+                  collection: Plant::EXPOSURES
+                %>
+              </div>
+            </div>
+        </fieldset>
+
+        <button name="button" type="submit" class="button">
+          add
+        </button>
+      </div>
+
       <%#= f.submit "add my plant", class: "btn btn-primary" %>
     <% end %>
   </div>

@@ -47,5 +47,12 @@
     border-color: $gold-yellow;
     color: white;
     width: 48px;
+    height: 32px;
+    align-self: flex-end;
   }
+}
+
+.form-buttons{
+  display: flex;
+  justify-content: space-between;
 }
