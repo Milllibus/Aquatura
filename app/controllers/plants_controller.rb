@@ -18,8 +18,11 @@ class PlantsController < ApplicationController
   # rubocop:disable Metrics/MethodLength
   def show
     @plant = Plant.find(params[:id])
+    i = 0
     @schedule = @plant.dates_of_watering(30).map do |date|
+      i += 1
       {
+        id: i,
         calendarId: '1',
         title: "#{@plant.nickname} schedule",
         category: 'time',

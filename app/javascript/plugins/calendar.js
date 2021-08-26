@@ -1,23 +1,27 @@
 import Calendar from 'tui-calendar';
-import "tui-calendar/dist/tui-calendar.css";
+
 
 const calendar = () => {
   const calElement = document.getElementById('calendarPlant')
   if (calElement) {
-    const myCal = new Calendar('#calendarPlant', {
+    let myCal = new Calendar('#calendarPlant', {
       defaultView: 'month',
+      month: {
+        visibleWeeksCount: 5 // visible week count in monthly
+      },
       isReadOnly: true,
-      height: '500px',
       template: {
         monthDayname: function (dayname) {
           return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
         }
       }
     });
-    // const schedule = JSON.parse(calElement.dataset.schedule)
-    // schedule.forEach((date) => {
-    //   myCal.createSchedules([date]);
-    // });
+    const schedule = JSON.parse(calElement.dataset.schedule)
+    console.log(schedule);
+    myCal.createSchedules(schedule);
+    // myCal.createSchedules([
+    //   {"id":1,"calendarId":"1","title":"Micheal Dare IV schedule","category":"time","start":"2021-08-28T00:00:00+02:00"},
+    //   {"id":2,"calendarId":"1","title":"Micheal Dare IV schedule","category":"time","start":"2021-08-26T00:00:00+02:00"}])
     // const watering_history = JSON.parse(calElement.dataset.history)
     // watering_history.forEach((date) => {
     //   myCal.createSchedules([date]);
