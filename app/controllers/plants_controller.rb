@@ -17,6 +17,14 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
+    @schedule = @plant.dates_of_watering(30).map do |date|
+      {
+        calendarId: '1',
+        title: "#{@plant.nickname} schedule",
+        category: 'time',
+        start: date
+      }
+    end
   end
 
   def destroy

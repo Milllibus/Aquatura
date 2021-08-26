@@ -2,8 +2,9 @@ import Calendar from 'tui-calendar';
 import "tui-calendar/dist/tui-calendar.css";
 
 const calendar = () => {
-  if (document.getElementById('calendarPlant')) {
-    new Calendar('#calendarPlant', {
+  const calElement = document.getElementById('calendarPlant')
+  if (calElement) {
+    const myCal = new Calendar('#calendarPlant', {
       defaultView: 'month',
       isReadOnly: true,
       template: {
@@ -11,6 +12,10 @@ const calendar = () => {
           return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
         }
       }
+    });
+    const schedule = JSON.parse(calElement.dataset.schedule)
+    schedule.forEach((date) => {
+      myCal.createSchedules([date])
     });
   }
 }
