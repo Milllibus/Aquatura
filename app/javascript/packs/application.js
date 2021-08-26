@@ -30,11 +30,13 @@ import "bootstrap";
 import { navMenu } from "../plugins/navbar_menu"
 import { bottomMenu } from "../plugins/bottom_menu"
 import { tab_opener } from "../plugins/tabs"
+import { calendar } from "../plugins/calendar"
 
 document.addEventListener('turbolinks:load', () => {
   bottomMenu();
   navMenu();
   tab_opener();
+  calendar();
 });
 
 import "controllers"
