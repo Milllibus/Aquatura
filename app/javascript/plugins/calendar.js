@@ -7,17 +7,22 @@ const calendar = () => {
     const myCal = new Calendar('#calendarPlant', {
       defaultView: 'month',
       isReadOnly: true,
+      height: '500px',
       template: {
         monthDayname: function (dayname) {
           return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
         }
       }
     });
-    const schedule = JSON.parse(calElement.dataset.schedule)
-    schedule.forEach((date) => {
-      myCal.createSchedules([date])
-    });
-  }
+    // const schedule = JSON.parse(calElement.dataset.schedule)
+    // schedule.forEach((date) => {
+    //   myCal.createSchedules([date]);
+    // });
+    // const watering_history = JSON.parse(calElement.dataset.history)
+    // watering_history.forEach((date) => {
+    //   myCal.createSchedules([date]);
+    // });
+  };
 }
 
 
