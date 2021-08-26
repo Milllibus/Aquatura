@@ -8,7 +8,6 @@ class PlantsController < ApplicationController
     @plant = Plant.new(plant_params)
     @plant.user = current_user
     @plant.specie = Specie.find(params[:specie_id])
-    @plant.waterings_date = dates_of_watering
     if @plant.save
       redirect_to plant_path(@plant)
     else
@@ -30,16 +29,5 @@ class PlantsController < ApplicationController
 
   def plant_params
     params.require(:plant).permit(:nickname, :exposure)
-  end
-
-  def dates_of_watering
-    dates = []
-    frequency = @plant.specie.watering_frequency
-    first_date = Date.today
-    dates << (first_date + frequency)
-    19.times do
-      dates << (dates.last + frequency)
-    end
-    return dates
   end
 end
