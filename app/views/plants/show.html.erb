@@ -1,12 +1,15 @@
 
   <div class="plant-show-container">
     <div class="plant-info">
-      <h2 style="color: white"><%= @plant.nickname %></h2>
-      <p><%= @plant.specie.name %></p>
-      <div class="plant-watering">
-        <%=  image_tag("watering.png")  %>
-        <p> Water in <br> 6(?) days</p>
+      <div class="plant-details">
+        <h2 style="color: white"><%= @plant.nickname %></h2>
+        <p><%= @plant.specie.name %></p>
+        <div class="plant-watering">
+          <%=  image_tag("watering.png")  %>
+          <p> Water in <br> 6(?) days</p>
+        </div>
       </div>
+      <%= image_tag @plant.specie.image_url %>
     </div>
 
     <div class="tabs-container">
@@ -14,7 +17,7 @@
       <div class="tab">
         <button class="tablinks top-left active-btn" data-tab="about">About</button>
         <button class="tablinks" data-tab="calendar">Calendar</button>
-        <button class="tablinks" data-tab="friends">Friends</button>
+        <button class="tablinks top-right" data-tab="friends">Friends</button>
       </div>
       <!-- Tab contents -->
       <div class="tab-contents">

@@ -8,6 +8,20 @@
     padding: 16px;
     color: white;
     font-family: $headers-font;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.plant-details {
+  height: 100px;
+}
+
+.plant-info img {
+  width: 70vw;
+  border-radius: 20px;
 }
 
 .plant-watering {
