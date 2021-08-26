@@ -8,6 +8,13 @@
 require 'faker'
 require 'csv'
 
+Watering.delete_all
+if Watering.count.zero?
+  puts "All waterings have been destroy"
+else
+  puts "error deleting waterings"
+end
+
 Plant.delete_all
 if Plant.count.zero?
   puts "All plants have been destroy"
@@ -34,16 +41,6 @@ if User.count.zero?
   puts "All users have been destroy"
 else
   puts "error deleting users"
-end
-
-
-
-
-Watering.delete_all
-if Watering.count.zero?
-  puts "All waterings have been destroy"
-else
-  puts "error deleting waterings"
 end
 
 # species

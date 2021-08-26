@@ -1,9 +1,9 @@
 class PlantsController < ApplicationController
-
   def index
     @plants = Plant.where(user_id: current_user)
   end
-  # retouch regarding specie_id and code the view of it
+  # retouc/h regarding specie_id and code the view of it
+
   def create
     @plant = Plant.new(plant_params)
     @plant.user = current_user
