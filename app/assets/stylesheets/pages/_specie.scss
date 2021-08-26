@@ -46,13 +46,14 @@
     border-radius: 33px;
     border-color: $gold-yellow;
     color: white;
-    width: 48px;
+    width: 96px;
     height: 32px;
-    align-self: flex-end;
+    margin-left: 16px;
   }
 }
 
 .form-buttons{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }

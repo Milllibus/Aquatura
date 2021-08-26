@@ -1,5 +1,5 @@
 class Plant < ApplicationRecord
-  EXPOSURES = %w[sun half shaddow]
+  EXPOSURES = %w[sun half shade]
   validates :nickname, presence: true
   validates :exposure, presence: true, inclusion: EXPOSURES
 

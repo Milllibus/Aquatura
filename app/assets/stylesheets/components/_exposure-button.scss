@@ -6,6 +6,8 @@
 
 .exposure-item {
   flex: 0 0 30%;
+  padding: 8px;
+  border-radius: 50%;
 }
 
 .exposure-selector {
@@ -22,7 +24,9 @@
   text-align: left;
   padding: 10px 10px 30px 10px;
   border: 1px solid #EAEAEA;
-  border-radius: 4px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
   background-color: white;
 }
 
@@ -41,21 +45,21 @@
 }
 
 
-#snippet_exposure_javascript + label {
+#plant_exposure_half + label {
   color: #FFC65A;
 }
 
-#snippet_exposure_javascript:checked + label {
+#plant_exposure_half:checked + label {
   background-color: #FFC65A;
   border-color: #FFC65A;
 }
 
 
-#snippet_exposure_css + label {
+#plant_exposure_shade + label {
   color: #62DDF5;
 }
 
-#snippet_exposure_css:checked + label {
+#plant_exposure_shade:checked + label {
   background-color: #62DDF5;
   border-color: #62DDF5;
 }
