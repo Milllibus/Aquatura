@@ -2,7 +2,21 @@
   <div class="specie-header">
     <h3><%= @specie.name %></h3>
     <%= image_tag @specie.image_url %>
+  </div>
+  <div class="plant-info">
+    <h3>About</h3>
     <%= @specie.description %>
+    <div class="water-needs">
+      <h3>Water needs</h3>
+        <div class="water-drops">
+        <p><i class="fas fa-tint"></i><i class="fas fa-tint"></i><i class="fas fa-tint"></i></p>
+        <%= @specie.watering_frequency %>
+      </div>
+    </div>
+    <div class="light-exposure">
+      <h3>Light exposure</h3>
+      <%= @specie.exposure %>
+    </div>
   </div>
   <div class="add-plant-form">
     <%= simple_form_for [ @specie, @plant ] do |f| %>

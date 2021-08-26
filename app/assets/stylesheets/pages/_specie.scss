@@ -25,6 +25,14 @@
   }
 }
 
+.plant-info{
+  justify-content: left;
+  align-items: flex-start;
+
+  h3{
+    border-bottom: 1px solid white;
+  }
+}
 
 .form-control{
   border-radius: 33px;
