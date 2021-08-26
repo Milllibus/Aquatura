@@ -1,15 +1,17 @@
 
   <div class="plant-show-container">
     <div class="plant-info">
-      <div class="plant-details">
-        <h2 style="color: white"><%= @plant.nickname %></h2>
-        <p><%= @plant.specie.name %></p>
+      <div class="plant-details d-flex justify-content-between align-items-center">
+        <div class="flex-shrink-1">
+          <h2 style="color: white"><%= @plant.nickname %></h2>
+          <p class="m-0"><%= @plant.specie.name %></p>
+        </div>
         <div class="plant-watering">
           <%=  image_tag("watering.png")  %>
           <p> Water in <br> 6(?) days</p>
         </div>
       </div>
-      <%= image_tag @plant.specie.image_url %>
+      <%= image_tag @plant.specie.image_url, id:"plant-img" %>
     </div>
 
     <div class="tabs-container">
