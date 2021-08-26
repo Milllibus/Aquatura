@@ -1,0 +1,51 @@
+.body{
+  background-color: $dark-green;
+}
+.specie-container {
+  background-color: $dark-green;
+  min-height: 1000px;
+  bottom: 0px;
+}
+
+.specie-header{
+  position: relative;
+  color: white;
+  padding: 16px;
+
+  img {
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  h3 {
+    color: white;
+  }
+}
+
+
+
+.add-plant-form {
+  background-color: white;
+  opacity: .85;
+  padding: 20px;
+  border-radius: 16px 16px 0px 0px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+  color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 16px;
+  margin-right: 16px;
+
+  .button {
+    background-color: $gold-yellow;
+    border-radius: 33px;
+    border-color: $gold-yellow;
+    color: white;
+    width: 48px;
+  }
+}
