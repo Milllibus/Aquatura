@@ -24,7 +24,9 @@
       <!-- Tab contents -->
       <div class="tab-contents">
         <div id="about" class="tabcontent active">
-          <p><%= @plant.specie.description %></p>
+          <div style="padding: 8px 8px">
+            <%= render 'shared/about', species: @specie %>
+          </div>
         </div>
 
         <div id="calendar" class="tabcontent">

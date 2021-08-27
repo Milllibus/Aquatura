@@ -18,6 +18,7 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
+    @specie = @plant.specie
     authorize @plant
   end
 

@@ -1,0 +1,32 @@
+  <div class="plant-title">
+    <h3>About</h3>
+  </div>
+    <%= @specie.description %>
+    <div class="water-needs">
+      <div class="plant-title">
+        <h3>Water needs</h3>
+      </div>
+      <div class="water-drops">
+        <% if @specie.watering_frequency < 8 %>
+          <p><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i><i class="fas fa-tint" ></i><i class="fas fa-tint"></i></p>
+        <% elsif @specie.watering_frequency >= 8 && @specie.watering_frequency < 17 %>
+          <p><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i><i class="fas fa-tint"></i></p>
+        <% else %>
+          <p><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="light-exposure">
+      <div class="plant-title">
+        <h3>Light exposure</h3>
+      </div>
+      <div class="exposure-details">
+        <% if @specie.exposure == "sun" %>
+          <i class="fas fa-sun"></i><p><strong>Sun</strong></p>
+        <% elsif @specie.exposure == "half" %>
+          <i class="fas fa-adjust"></i><p><strong>Half-shade</strong></p>
+        <% else %>
+          <i class="fas fa-circle"></i><p><strong>Shade</strong></p>
+        <% end %>
+      </div>
+    </div>
