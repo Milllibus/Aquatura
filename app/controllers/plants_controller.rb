@@ -19,6 +19,7 @@ class PlantsController < ApplicationController
   def show
     @plant = Plant.find(params[:id])
     @specie = @plant.specie
+    @next_day = (@plant.dates_of_watering(30).first - Date.today).to_i
     authorize @plant
   end
 
