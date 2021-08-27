@@ -24,19 +24,24 @@ class PlantsController < ApplicationController
       {
         id: i,
         calendarId: '1',
-        title: "#{@plant.nickname} schedule",
-        category: 'time',
-        start: date
+        title: "Water #{@plant.nickname} :)",
+        category: 'allday',
+        start: date,
+        bgColor: 'red'
       }
     end
-    # @watering_history = @plant.waterings.map do |watering|
-    #   {
-    #     calendarId: '1',
-    #     title: "#{@plant.nickname} watering history",
-    #     category: 'time',
-    #     start: watering.created_at
-    #   }
-    # end
+    @plant.waterings.each do |watering|
+      i += 1
+      @schedule << {
+        id: i,
+        calendarId: '1',
+        title: "You watered #{@plant.nickname}",
+        category: 'allday',
+        start: watering.created_at,
+        bgColor: 'blue'
+      }
+    end
+
   end
   # rubocop:enable Metrics/MethodLength
 
