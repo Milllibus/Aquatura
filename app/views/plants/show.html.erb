@@ -8,7 +8,7 @@
         </div>
         <div class="plant-watering">
           <%=  image_tag("watering.png") %>
-          <p> Water in <br> 6(?) days</p>
+          <p> Water in <br> <%= @next_day %> days</p>
         </div>
       </div>
       <%= image_tag @plant.specie.image_url, id:"plant-img" %>
@@ -24,11 +24,15 @@
       <!-- Tab contents -->
       <div class="tab-contents">
         <div id="about" class="tabcontent active">
-          <p><%= @plant.specie.description %></p>
+          <div style="padding: 8px 8px">
+            <%= render 'shared/about', species: @specie %>
+          </div>
         </div>
 
         <div id="calendar" class="tabcontent">
-          <p>Here will be the watering calendar, where tf is it ??</p>
+          <div id="calendarPlant" style="height: 500px;"
+              data-schedule="<%= @schedule.to_json %>">
+          </div>
         </div>
 
         <div id="friends" class="tabcontent">

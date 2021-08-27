@@ -3,7 +3,7 @@
 }
 .specie-container {
   background-color: $dark-green;
-  min-height: 1000px;
+  min-height: 1100px;
   bottom: 0px;
 }
 
@@ -14,17 +14,50 @@
 
   img {
     width: 100%;
+    height: 240px;
+    object-fit: cover;
     margin-top: 8px;
-    margin-bottom: 8px;
     border-radius: 16px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   }
 
-  h3 {
-    color: white;
+}
+
+.specie-info{
+  justify-content: left;
+  align-items: flex-start;
+  padding: 0px 18px;
+  color: white;
+}
+
+
+.plant-title{
+  margin-top: 8px;
+
+}
+
+.water-drops {
+  color: rgba(167, 205, 255, 0.438);
+  font-size: 40px;
+  i{
+    margin-right: 16px;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+
   }
 }
 
+.exposure-details{
+  display: flex;
+  align-items: center;
+
+  i{
+    font-size: 32px;
+    margin-right: 16px;
+  }
+  p{
+    padding-top: 16px;
+  }
+}
 
 .form-control{
   border-radius: 33px;
