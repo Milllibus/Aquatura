@@ -8,7 +8,7 @@
         </div>
         <div class="plant-watering">
           <%=  image_tag("watering.png") %>
-          <p> Water in <br> 6(?) days</p>
+          <p> Water in <br> <%= @next_day %> days</p>
         </div>
       </div>
       <%= image_tag @plant.specie.image_url, id:"plant-img" %>
