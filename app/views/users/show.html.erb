@@ -55,9 +55,9 @@
         </div>
       <% end %>
     <% end %>
-    <% if current_user.plants_need_watering?(15, 1) %>
+    <% if current_user.plants_need_watering?(15, 2) %>
       <h3>Next plants to water</h3>
-      <% current_user.plants_to_water(15, 1).each do |plant| %>
+      <% current_user.plants_to_water(15, 2).each do |plant| %>
         <div class="card-species">
           <div class="card-species-img card-plants-img">
             <%= link_to plant_path(plant.id) do %>
