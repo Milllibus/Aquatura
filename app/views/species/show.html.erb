@@ -4,24 +4,7 @@
     <%= image_tag @specie.image_url %>
   </div>
   <div class="plant-info">
-    <h3>About</h3>
-    <%= @specie.description %>
-    <div class="water-needs">
-      <h3>Water needs</h3>
-        <div class="water-drops">
-        <% if @specie.watering_frequency < 8 %>
-          <p><i class="fas fa-tint" style="color: blue; "></i><i class="fas fa-tint"></i><i class="fas fa-tint"></i></p>
-        <% elsif @specie.watering_frequency >= 8 && @specie.watering_frequency < 17 %>
-          <p><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint"></i></p>
-        <% else %>
-          <p><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint" style="color: blue;"></i></p>
-        <% end %>
-      </div>
-    </div>
-    <div class="light-exposure">
-      <h3>Light exposure</h3>
-      <%= @specie.exposure %>
-    </div>
+    <%= render 'about', species: @species %>
   </div>
   <div class="add-plant-form">
     <%= simple_form_for [ @specie, @plant ] do |f| %>
