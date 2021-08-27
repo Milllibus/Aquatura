@@ -24,17 +24,20 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "tui-calendar/dist/tui-calendar.css";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { navMenu } from "../plugins/navbar_menu"
 import { bottomMenu } from "../plugins/bottom_menu"
 import { tab_opener } from "../plugins/tabs"
+import { calendar } from "../plugins/calendar"
 
 document.addEventListener('turbolinks:load', () => {
   bottomMenu();
   navMenu();
   tab_opener();
+  calendar();
 });
 
 import "controllers"

@@ -30,7 +30,9 @@
         </div>
 
         <div id="calendar" class="tabcontent">
-          <p>Here will be the watering calendar, where tf is it ??</p>
+          <div id="calendarPlant" style="height: 500px;"
+              data-schedule="<%= @schedule.to_json %>">
+          </div>
         </div>
 
         <div id="friends" class="tabcontent">

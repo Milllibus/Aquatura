@@ -16,11 +16,37 @@ class PlantsController < ApplicationController
     end
   end
 
+  # rubocop:disable Metrics/MethodLength
   def show
     @plant = Plant.find(params[:id])
     @specie = @plant.specie
     authorize @plant
+    i = 0
+    @schedule = @plant.dates_of_watering(30).map do |date|
+      i += 1
+      {
+        id: i,
+        calendarId: '1',
+        title: "Water #{@plant.nickname} :)",
+        category: 'allday',
+        start: date,
+        bgColor: '#09573D',
+        color: 'white',
+      }
+    end
+    @plant.waterings.each do |watering|
+      i += 1
+      @schedule << {
+        id: i,
+        calendarId: '1',
+        title: "You watered #{@plant.nickname}",
+        category: 'allday',
+        start: watering.created_at,
+        bgColor: '#FFAE03'
+      }
+    end
   end
+  # rubocop:enable Metrics/MethodLength
 
   def destroy
     @plant = Plant.find(params[:id])

@@ -1,0 +1,14 @@
+#calendarPlant {
+  margin: 16px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  top: 64px;
+  overflow-y: scroll;
+
+}
+
+.tui-full-calendar-month div:nth-child(2){
+  height: 100%;
+}
