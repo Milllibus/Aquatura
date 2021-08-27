@@ -1,17 +1,16 @@
 <div class="container">
   <h1>Hello <%= @user.username %>!</h1>
-
-  <div class="add-button">
-    <%= link_to species_path do %>
+  <%= link_to species_path do %>
+    <div class="add-button">
       <%= icon('fas', 'plus-circle') %> Add a new plant
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
-  <div class="eplant-button">
-    <%= link_to eplant_path(@user.eplant.id) do %>
+  <%= link_to eplant_path(@user.eplant.id) do %>
+    <div class="eplant-button">
       <%= icon('fas', 'plus-circle') %> Visit <%= @user.eplant.nickname.capitalize %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <div class="cards mt-3">
     <% @plants.each do |plant| %>
