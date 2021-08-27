@@ -7,24 +7,25 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 require 'csv'
+require 'open-uri'
 
 Watering.delete_all
 if Watering.count.zero?
-  puts "All waterings have been destroy"
+  puts "All waterings have been destroyed"
 else
   puts "error deleting waterings"
 end
 
 Plant.delete_all
 if Plant.count.zero?
-  puts "All plants have been destroy"
+  puts "All plants have been destroyed"
 else
   puts "error deleting plants"
 end
 
 Specie.delete_all
 if Specie.count.zero?
-  puts "All species have been destroy"
+  puts "All species have been destroyed"
 else
   puts "error deleting species"
 end
@@ -59,7 +60,7 @@ species_search.each do |specie|
   attributes = scraper.scrap(specie)
   new_specie = Specie.new(attributes)
   new_specie.exposure = exposures.sample
-  new_specie.watering_frequency = rand(2..21)
+  new_specie.watering_frequency = rand(2..10)
   new_specie.save
   species << new_specie
 end
@@ -139,17 +140,24 @@ end
 
 user1 = User.create(
   email: 'thais@lewagon.fr',
-  username: 'tahisW',
+  username: 'thaïsW',
   password: '123456',
   password_confirmation: '123456'
 )
+photo1 = URI.open("https://st4.depositphotos.com/13194036/25333/i/1600/depositphotos_253334960-stock-photo-sexy-young-woman-in-white.jpg")
+user1.photo.attach(io: photo1, filename: "jardiniere.jpg", content_type: 'image/jpg')
+
 
 user2 = User.create(
   email: 'adrien@lewagon.fr',
-  username: 'adrienW',
+  username: 'adrïenW',
   password: '123456',
   password_confirmation: '123456'
 )
+photo2 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb8vtP5ykKZ0gm3D1TDOaCcfDtsNQtuAlI2swJV00yFHTeXPPsxoTdhZ_7ppELQQdsyrk&usqp=CAU")
+user2.photo.attach(io: photo2, filename: "jardiniere.jpg", content_type: 'image/jpg')
+
+
 
 user3 = User.create(
   email: 'rogerio@lewagon.fr',
@@ -157,6 +165,9 @@ user3 = User.create(
   password: '123456',
   password_confirmation: '123456'
 )
+photo3 = URI.open("https://2.bp.blogspot.com/-jLaNDufIHts/V9Ht3RUdGDI/AAAAAAAADxA/Ts5ipmR4chwEnFDR5pAdIhFOJLRXwAEHgCLcB/s1600/guestpost16_adatseng05.jpg")
+user3.photo.attach(io: photo3, filename: "jardiniere.jpg", content_type: 'image/jpg')
+
 
 user4 = User.create(
   email: 'augustin@lewagon.fr',
@@ -164,6 +175,9 @@ user4 = User.create(
   password: '123456',
   password_confirmation: '123456'
 )
+photo4 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc28QMcjpqPRltBVZ_mX6pRU-mkFKr8difo1fgu0apPwGx9BikMBPOw96GF2VZgx4zXHY&usqp=CAU")
+user4.photo.attach(io: photo4, filename: "jardiniere.jpg", content_type: 'image/jpg')
+
 
 users = [user1, user2, user3, user4]
 
@@ -230,7 +244,7 @@ exposure = %w[sun half shade]
 
 20.times do
   plant = Plant.new(
-    nickname: Faker::Name.name,
+    nickname: Faker::Games::Pokemon.name,
     exposure: exposure.sample
   )
   plant.user = users.sample
@@ -245,3 +259,4 @@ else
 end
 
 # Waterings ?
+puts "xoxo, GossipGirl.."
