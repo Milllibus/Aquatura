@@ -13,23 +13,68 @@
   <% end %>
 
   <div class="cards mt-3">
-    <% @plants.each do |plant| %>
-      <div class="card-species">
-        <div class="card-species-img card-plants-img">
-          <%= link_to plant_path(plant.id) do %>
-            <%= image_tag plant.specie.image_url %>
-          <% end %>
+    <% if current_user.plants_need_watering?(1, 0) %>
+      <h3>Water this plant</h3>
+      <% current_user.plants_to_water(1, 0).each do |plant| %>
+        <div class="card-species">
+          <div class="card-species-img card-plants-img">
+            <%= link_to plant_path(plant.id) do %>
+              <%= image_tag plant.specie.image_url %>
+            <% end %>
+          </div>
+          <div class="card-species-infos card-plants-infos">
+            <%= link_to plant_path(plant.id) do %>
+              <h2><%= plant.nickname %></h2>
+              <p> <%= plant.specie.name %></p>
+            <% end %>
+          </div>
+          <div class="create-watering">
+            <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(plant.id), method: :post %>
+          </div>
         </div>
-        <div class="card-species-infos card-plants-infos">
-          <%= link_to plant_path(plant.id) do %>
-            <h2><%= plant.nickname %></h2>
-            <p> <%= plant.specie.name %></p>
-          <% end %>
+      <% end %>
+    <% end %>
+    <% if current_user.plants_need_watering?(1, 1) %>
+      <h3>Water tomorrow</h3>
+      <% current_user.plants_to_water(1, 1).each do |plant| %>
+        <div class="card-species">
+          <div class="card-species-img card-plants-img">
+            <%= link_to plant_path(plant.id) do %>
+              <%= image_tag plant.specie.image_url %>
+            <% end %>
+          </div>
+          <div class="card-species-infos card-plants-infos">
+            <%= link_to plant_path(plant.id) do %>
+              <h2><%= plant.nickname %></h2>
+              <p> <%= plant.specie.name %></p>
+            <% end %>
+          </div>
+          <div class="create-watering">
+            <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(plant.id), method: :post %>
+          </div>
         </div>
-        <div class="create-watering">
-           <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(plant.id), method: :post %>
+      <% end %>
+    <% end %>
+    <% if current_user.plants_need_watering?(15, 1) %>
+      <h3>Next plants to water</h3>
+      <% current_user.plants_to_water(15, 1).each do |plant| %>
+        <div class="card-species">
+          <div class="card-species-img card-plants-img">
+            <%= link_to plant_path(plant.id) do %>
+              <%= image_tag plant.specie.image_url %>
+            <% end %>
+          </div>
+          <div class="card-species-infos card-plants-infos">
+            <%= link_to plant_path(plant.id) do %>
+              <h2><%= plant.nickname %></h2>
+              <p> <%= plant.specie.name %></p>
+            <% end %>
+          </div>
+          <div class="create-watering">
+            <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(plant.id), method: :post %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

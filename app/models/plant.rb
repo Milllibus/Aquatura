@@ -19,4 +19,12 @@ class Plant < ApplicationRecord
     end
     return dates
   end
+
+  def need_watering?(days, days_start = 0)
+    self.dates_of_watering(days).first < Date.today + days_start + days && self.dates_of_watering(days).first > Date.today + days_start
+  end
+
+  #auj : need_watering?(1)
+
+
 end
