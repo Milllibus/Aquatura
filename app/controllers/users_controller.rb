@@ -3,5 +3,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @plants = current_user.plants
     @watering = Watering.new
+    authorize @user
   end
 end

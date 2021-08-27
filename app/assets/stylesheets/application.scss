@@ -22,6 +22,12 @@ h2 {
   font-weight: 600;
   color: $dark-green;
 }
+a:hover {
+  text-decoration: none;
+  &:active {
+    text-decoration: none;
+  }
+}
 
 .container {
   margin-top: 16px;

@@ -1,11 +1,12 @@
 class PlantsController < ApplicationController
   def index
-    @plants = Plant.where(user_id: current_user)
+    @plants = policy_scope(Plant).where(user_id: current_user)
   end
   # retouc/h regarding specie_id and code the view of it
 
   def create
     @plant = Plant.new(plant_params)
+    authorize @plant
     @plant.user = current_user
     @plant.specie = Specie.find(params[:specie_id])
     if @plant.save
@@ -18,6 +19,8 @@ class PlantsController < ApplicationController
   # rubocop:disable Metrics/MethodLength
   def show
     @plant = Plant.find(params[:id])
+    @specie = @plant.specie
+    authorize @plant
     i = 0
     @schedule = @plant.dates_of_watering(30).map do |date|
       i += 1
@@ -42,12 +45,12 @@ class PlantsController < ApplicationController
         bgColor: '#FFAE03'
       }
     end
-
   end
   # rubocop:enable Metrics/MethodLength
 
   def destroy
     @plant = Plant.find(params[:id])
+    authorize @plant
     @plant.destroy
     redirect_to plants_path
   end

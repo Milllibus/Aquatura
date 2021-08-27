@@ -1,0 +1,29 @@
+.card-friends {
+  border-radius: 33px;
+  overflow: hidden;
+  height: 68px;
+  background: white;
+  box-shadow: 0 0 15px rgba(9, 87, 61, 0.3);
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+
+  h2 {
+    font-size: 16px;
+    color: $dark-green;
+    font-weight: bold;
+    margin-left: 35px;
+  }
+}
+
+.tabcontent {
+  h3 {
+    color: $dark-green;
+    padding-top: 8px;
+  }
+}
+
+.tabcontent p {
+    color: $dark-green;
+    padding-top: 8px;
+}

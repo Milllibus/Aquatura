@@ -17,6 +17,6 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
-    <%= render 'shared/button_menu' %>
+    <%= render 'shared/button_menu' unless @skip_button_menu %>
   </body>
 </html>

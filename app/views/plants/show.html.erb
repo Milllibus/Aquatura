@@ -1,16 +1,18 @@
 
   <div class="plant-show-container">
     <div class="plant-info">
-      <div class="plant-details">
-        <h2 style="color: white"><%= @plant.nickname %></h2>
-        <p><%= @plant.specie.name %></p>
+      <div class="plant-details d-flex justify-content-between align-items-center">
+        <div class="flex-shrink-1">
+          <h2 style="color: white"><%= @plant.nickname %></h2>
+          <p class="m-0"><%= @plant.specie.name %></p>
+        </div>
         <div class="plant-watering">
-          <%=  image_tag("watering.png")  %>
+          <%=  image_tag("watering.png") %>
           <p> Water in <br> 6(?) days</p>
         </div>
       </div>
-     <%= image_tag @plant.specie.image_url %>
-     </div>
+      <%= image_tag @plant.specie.image_url, id:"plant-img" %>
+    </div>
 
     <div class="tabs-container">
       <!-- Tab links -->
@@ -22,7 +24,9 @@
       <!-- Tab contents -->
       <div class="tab-contents">
         <div id="about" class="tabcontent active">
-          <p><%= @plant.specie.description %></p>
+          <div style="padding: 8px 8px">
+            <%= render 'shared/about', species: @specie %>
+          </div>
         </div>
 
         <div id="calendar" class="tabcontent">
@@ -32,8 +36,21 @@
         </div>
 
         <div id="friends" class="tabcontent">
-          <p>Allo ? la friends list ?</p>
+          <h3>These friends have the same plant!</h4>
+          <div class="mb-4 mt-4 friend card-friends">
+            <%= cl_image_tag("jardinier1_p7gbio", class:"avatar-bordered-large", crop: :fill) %>
+            <h2 class='mb-0'> RogerioW </h2>
+          </div>
+           <div class="mb-4 mt-4 friend card-friends">
+            <%= cl_image_tag("jardinier4_hzlqon", class:"avatar-bordered-large", crop: :fill) %>
+            <h2 class='mb-0'> AdrienW </h2>
+          </div>
+           <div class="mb-4 mt-4 friend card-friends">
+            <%= cl_image_tag("jardinier3_k17wni", class:"avatar-bordered-large", crop: :fill) %>
+            <h2 class='mb-0'> AugustinW </h2>
+          </div>
         </div>
       </div>
     </div>
+    <% @skip_button_menu = true %>
   </div>

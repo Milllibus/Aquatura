@@ -226,7 +226,7 @@ end
 
 # 20 plants
 
-exposure = ['sunny', 'half', 'shaddow']
+exposure = %w[sun half shade]
 
 20.times do
   plant = Plant.new(

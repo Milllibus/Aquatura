@@ -3,10 +3,11 @@ class SpeciesController < ApplicationController
   def show
     @specie = Specie.find(params[:id])
     @plant = Plant.new
+    authorize @specie
   end
 
   def index
-    @species = Specie.all
+    @species = policy_scope(Specie).all
 
     if params[:query].present?
       @species = @species.where('name ILIKE ?', "%#{params[:query]}%")
