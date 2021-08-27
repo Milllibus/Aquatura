@@ -13,9 +13,9 @@
   <% end %>
 
   <div class="cards mt-3">
-    <% @plants.each do |plant| %>
-      <% if plant.dates_of_watering(plant.specie.watering_frequency) == Date.today %>
-        <h3>Water this plant</h3>
+    <% if current_user.plants_need_watering?(1, 0) %>
+      <h3>Water this plant</h3>
+      <% current_user.plants_to_water(1, 0).each do |plant| %>
         <div class="card-species">
           <div class="card-species-img card-plants-img">
             <%= link_to plant_path(plant.id) do %>
@@ -32,8 +32,11 @@
             <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(plant.id), method: :post %>
           </div>
         </div>
-      <% elsif plant.dates_of_watering(plant.specie.watering_frequency) == Date.tomorrow %>
-        <h3>Water tomorrow</h3>
+      <% end %>
+    <% end %>
+    <% if current_user.plants_need_watering?(1, 1) %>
+      <h3>Water tomorrow</h3>
+      <% current_user.plants_to_water(1, 1).each do |plant| %>
         <div class="card-species">
           <div class="card-species-img card-plants-img">
             <%= link_to plant_path(plant.id) do %>
@@ -50,8 +53,11 @@
             <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(plant.id), method: :post %>
           </div>
         </div>
-      <% else plant.dates_of_watering(plant.specie.watering_frequency) == Date.today.strftime("%m")%>
-        <h3>Water this plant</h3>
+      <% end %>
+    <% end %>
+    <% if current_user.plants_need_watering?(15, 1) %>
+      <h3>Next plants to water</h3>
+      <% current_user.plants_to_water(15, 1).each do |plant| %>
         <div class="card-species">
           <div class="card-species-img card-plants-img">
             <%= link_to plant_path(plant.id) do %>
