@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Hello <%= @user.username %>!</h1>
+  <h1>Hello <%= @user.username.capitalize %>!</h1>
   <%= link_to species_path do %>
     <div class="add-button">
       <%= icon('fas', 'plus-circle') %> Add a new plant

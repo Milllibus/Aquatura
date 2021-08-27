@@ -42,7 +42,7 @@
             <% unless user == current_user %>
               <div class="mb-4 mt-4 friend card-friends">
                 <%= cl_image_tag user.photo.key, class:"avatar-bordered-large" %>
-                <h2 class='mb-0'> <%= user.username %> </h2>
+                <h2 class='mb-0'> <%= user.username.capitalize %> </h2>
               </div>
             <% end %>
           <% end %>
