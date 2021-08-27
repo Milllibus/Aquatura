@@ -27,7 +27,8 @@ class PlantsController < ApplicationController
         title: "Water #{@plant.nickname} :)",
         category: 'allday',
         start: date,
-        bgColor: 'red'
+        bgColor: '#09573D',
+        color: 'white',
       }
     end
     @plant.waterings.each do |watering|
@@ -38,7 +39,7 @@ class PlantsController < ApplicationController
         title: "You watered #{@plant.nickname}",
         category: 'allday',
         start: watering.created_at,
-        bgColor: 'blue'
+        bgColor: '#FFAE03'
       }
     end
 
