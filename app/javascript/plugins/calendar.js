@@ -116,13 +116,14 @@ const generalCalendar = () => {
     let generalCal = new Calendar('#general-calendar', {
       defaultView: 'month',
       month: {
-        visibleWeeksCount: 5 // visible week count in monthly
+        visibleWeeksCount: 3 // visible week count in monthly
       },
       isReadOnly: true,
       scheduleView: true,
+      useDetailPopup: true,
       template: templates
     });
-    const generalSchedule = JSON.parse(calElement.dataset.generalSchedule);
+    const generalSchedule = JSON.parse(calElement.dataset.general);
     generalCal.createSchedules(generalSchedule);
     calNavigation(generalCal);
   }

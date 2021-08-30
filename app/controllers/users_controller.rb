@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         plant_schedule = {
           id: i,
           calendarId: '2',
-          title: "<i class='fas fa-shower'></i>",
+          title: plant.nickname,
           category: 'allday',
           start: date,
           bgColor: '#FFAE03'
