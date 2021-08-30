@@ -12,6 +12,7 @@ class Plant < ApplicationRecord
     plant = self
     frequency = plant.specie.watering_frequency
     first_date = plant.waterings.empty? ? Date.today : plant.waterings.max_by(&:created_at).created_at.to_date + frequency
+    first_date = Date.today if first_date.to_date - Date.today < 0
     dates << first_date.to_time
     ((period_length / frequency) - 1).to_i.times do
       date = (dates.last.to_date + frequency)
