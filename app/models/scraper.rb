@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'json'
 
 # rubocop:disable Metrics/MethodLength
 class Scraper
@@ -27,4 +28,18 @@ class Scraper
     }
   end
   # rubocop:enable Metrics/MethodLength
+
+  def weather
+    city = "Marseille"
+    api_k = "3a84afc0cbb1319754a397547de8202e"
+    url = "api.openweathermap.org/data/2.5/weather?q=#{city}&appid=#{api_k}"
+
+    html_file = URI.open(url).read
+    weather = JSON.parse(html_file)
+
+    puts weather['weather']
+  end
 end
+
+scraper = Scraper.new
+scraper.weather

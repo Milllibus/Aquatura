@@ -119,6 +119,7 @@ GEM
       nokogiri (>= 1.6)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
+    json (1.8.6)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -138,8 +139,11 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.12.3-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.12.3-x86_64-linux)
       racc (~> 1.4)
+    open-weather (0.12.0)
+      json (~> 1)
     orm_adapter (0.5.0)
     pg (1.2.3)
     pry (0.13.1)
@@ -279,6 +283,7 @@ DEPENDENCIES
   inline_svg
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  open-weather
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails
