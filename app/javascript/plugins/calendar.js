@@ -86,6 +86,8 @@ const templates = {
   }
 }
 
+
+
 const calendar = () => {
   const calElement = document.getElementById('calendarPlant')
   if (calElement) {
@@ -100,6 +102,18 @@ const calendar = () => {
     });
     const schedule = JSON.parse(calElement.dataset.schedule)
     myCal.createSchedules(schedule);
+    const TodayElement = document.querySelector("[data-action='move-today']");
+    TodayElement.addEventListener('click', () => {
+      myCal.today();
+    })
+    const PrevElement = document.querySelector("[data-action='move-prev']");
+    PrevElement.addEventListener('click', () => {
+      myCal.prev();
+    })
+    const NextElement = document.querySelector("[data-action='move-next']");
+    NextElement.addEventListener('click', () => {
+      myCal.next();
+    })
   };
 }
 
