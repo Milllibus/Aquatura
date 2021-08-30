@@ -1,5 +1,5 @@
+// Calendar by plant
 #calendarPlant {
-  margin-top: 50px;
   margin: 16px;
   position: absolute;
   left: 0;
@@ -18,4 +18,10 @@
   border-radius: 20px;
   background-color: lightgray;
   padding: 4px 8px;
+}
+
+// General calendar
+#general-calendar {
+  margin: 8px;
+  overflow-y: scroll;
 }

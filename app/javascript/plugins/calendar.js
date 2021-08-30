@@ -87,7 +87,7 @@ const calNavigation = (cal) => {
 
 
 const calendar = () => {
-  const calElement = document.getElementById('calendarPlant')
+  const calElement = document.getElementById('calendarPlant');
   if (calElement) {
     let myCal = new Calendar('#calendarPlant', {
       defaultView: 'month',
@@ -110,4 +110,22 @@ const calendar = () => {
   };
 }
 
-export { calendar };
+const generalCalendar = () => {
+  const calElement = document.getElementById('general-calendar');
+  if (calElement) {
+    let generalCal = new Calendar('#general-calendar', {
+      defaultView: 'month',
+      month: {
+        visibleWeeksCount: 5 // visible week count in monthly
+      },
+      isReadOnly: true,
+      scheduleView: true,
+      template: templates
+    });
+    const generalSchedule = JSON.parse(calElement.dataset.generalSchedule);
+    generalCal.createSchedules(generalSchedule);
+    calNavigation(generalCal);
+  }
+}
+
+export { calendar, generalCalendar };
