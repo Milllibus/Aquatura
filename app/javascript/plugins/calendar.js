@@ -25,24 +25,6 @@ function getTimeTemplate(schedule, isAllDay) {
   return html.join('');
 }
 
-function getGridTitleTemplate(type) {
-  var title = '';
-
-  switch (type) {
-    case 'milestone':
-      title = '<span class="tui-full-calendar-left-content">MILESTONE</span>';
-      break;
-    case 'task':
-      title = '<span class="tui-full-calendar-left-content">TASK</span>';
-      break;
-    case 'allday':
-      title = '<span class="tui-full-calendar-left-content">ALL DAY</span>';
-      break;
-  }
-
-  return title;
-}
-
 function getGridCategoryTemplate(category, schedule) {
   var tpl;
 
@@ -65,14 +47,8 @@ const templates = {
   monthDayname: function (dayname) {
     return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
   },
-  time: function (schedule) {
-    return getTimeTemplate(schedule, false);
-  },
   allday: function (schedule) {
     return getTimeTemplate(schedule, true);
-  },
-  alldayTitle: function () {
-    return getGridTitleTemplate('allday');
   },
   allday: function (schedule) {
     /*
@@ -81,10 +57,34 @@ const templates = {
      * task: function() {...}
      * allday: function() {...}
     */
-
     return getGridCategoryTemplate(schedule.category, schedule);
   }
 }
+
+const calNavigation = (cal) => {
+  const todayElement = document.querySelector("[data-action='move-today']");
+  const prevElement = document.querySelector("[data-action='move-prev']");
+  const nextElement = document.querySelector("[data-action='move-next']");
+  todayElement.addEventListener('click', (e) => {
+    cal.today();
+    e.currentTarget.classList.add('cal-active');
+    prevElement.classList.remove('cal-active');
+    nextElement.classList.remove('cal-active');
+  })
+  prevElement.addEventListener('click', (e) => {
+    cal.prev();
+    e.currentTarget.classList.add('cal-active');
+    todayElement.classList.remove('cal-active');
+    nextElement.classList.remove('cal-active');
+  })
+  nextElement.addEventListener('click', (e) => {
+    cal.next();
+    e.currentTarget.classList.add('cal-active');
+    prevElement.classList.remove('cal-active');
+    todayElement.classList.remove('cal-active');
+  })
+}
+
 
 const calendar = () => {
   const calElement = document.getElementById('calendarPlant')
@@ -100,6 +100,13 @@ const calendar = () => {
     });
     const schedule = JSON.parse(calElement.dataset.schedule)
     myCal.createSchedules(schedule);
+    const calendarTab = document.getElementById('calendar-btn');
+    const todayElement = document.querySelector("[data-action='move-today']");
+    calendarTab.addEventListener('click', () => {
+      myCal.today();
+      todayElement.classList.add('cal-active');
+    })
+    calNavigation(myCal);
   };
 }
 

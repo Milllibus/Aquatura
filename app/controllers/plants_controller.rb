@@ -28,11 +28,10 @@ class PlantsController < ApplicationController
       {
         id: i,
         calendarId: '1',
-        title: "Water #{@plant.nickname} :)",
+        title: "<i class='fas fa-shower'></i>",
         category: 'allday',
         start: date,
-        bgColor: '#09573D',
-        color: 'white',
+        bgColor: '#FFAE03'
       }
     end
     @plant.waterings.each do |watering|
@@ -40,10 +39,11 @@ class PlantsController < ApplicationController
       @schedule << {
         id: i,
         calendarId: '1',
-        title: "You watered #{@plant.nickname}",
+        title: "<i class='fas fa-tint'></i>",
         category: 'allday',
         start: watering.created_at,
-        bgColor: '#FFAE03'
+        bgColor: '#09573D',
+        color: 'white'
       }
     end
   end
