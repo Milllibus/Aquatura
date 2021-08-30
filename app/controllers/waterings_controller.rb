@@ -16,5 +16,6 @@ class WateringsController < ApplicationController
 
     @eplant = @plant.user.eplant
     @eplant.level += 10
+    @eplant.save
   end
 end
