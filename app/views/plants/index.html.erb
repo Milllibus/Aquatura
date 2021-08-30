@@ -1,5 +1,10 @@
 <div class="container">
-  <h1>My garden</h1>
+  <div class="garden-header">
+    <h1>My garden</h1>
+    <div class="eplant-button plant-count user-button">
+      <i class="fas fa-seedling"></i> <%= @plants.count %> plants
+    </div>
+  </div>
   <div class="cards mt-3">
     <% @plants.each do |plant| %>
       <div class="card-species">
