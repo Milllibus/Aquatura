@@ -1,7 +1,13 @@
 <h1>Aquatura</h1>
 
 <p>
-  <%= @greeting %> dear friend, I am not gonna be home for a while could you take care of my plants ?
+  <%= @greeting %> dear friend, I am not gonna be home for <%= @duration %> days could you take care of my plants ?
 </p>
 
-<div id="calendarPlant" style="height: 500px;" data-schedule="<%= @schedule.to_json %>"></div>
+<% @plants.each do |plant| %>
+  <div>
+    <h2><%= plant.nickname %></h2>
+    <h3><%= plant.specie.name %></h3>
+    <%= plant.dates_of_watering(@duration.to_i) %>
+  </div>
+<% end %>

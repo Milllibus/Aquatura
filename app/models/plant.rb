@@ -7,6 +7,8 @@ class Plant < ApplicationRecord
   belongs_to :user
   has_many :waterings, dependent: :destroy
 
+  # rubocop:disable Metrics/MethodLength
+
   def dates_of_watering(period_length)
     dates = []
     plant = self
@@ -22,7 +24,7 @@ class Plant < ApplicationRecord
   end
 
   def need_watering?(days, days_start = 0)
-    #self.dates_of_watering(days).first < Date.today + days_start + days && self.dates_of_watering(days).first > Date.today + days_start
+    # self.dates_of_watering(days).first < Date.today + days_start + days && self.dates_of_watering(days).first > Date.today + days_start
     self.dates_of_watering(days).any? do |date|
       date.to_date < Date.today + days_start + days && date.to_date >= Date.today + days_start
     end
@@ -30,5 +32,5 @@ class Plant < ApplicationRecord
 
   #auj : need_watering?(1)
 
-
+  # rubocop:enable Metrics/MethodLength
 end
