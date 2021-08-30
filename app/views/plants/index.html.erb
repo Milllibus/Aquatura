@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>My garden</h1>
+  <div class="cards mt-3">
+    <% @plants.each do |plant| %>
+      <div class="card-species">
+        <div class="card-species-img card-plants-img">
+          <%= link_to plant_path(plant.id) do %>
+            <%= image_tag plant.specie.image_url %>
+          <% end %>
+        </div>
+        <div class="card-species-infos card-plants-infos">
+          <%= link_to plant_path(plant.id) do %>
+            <h2><%= plant.nickname %></h2>
+            <p> <%= plant.specie.name %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
