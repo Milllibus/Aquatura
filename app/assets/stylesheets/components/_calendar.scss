@@ -15,8 +15,6 @@
 
 // navigation
 .cal-active {
-  // border: 1px solid lightgray;
-  // border-radius: 20px;
   background-color: lightgray;
   padding: 4px 8px;
 }
@@ -34,6 +32,7 @@
 
 #general-calendar-menu {
   padding: 0px 8px;
+  margin-top: 12px;
 }
 
 .user-calendar {
@@ -44,5 +43,6 @@
   margin-top: 24px;
   h2 {
     padding: 0px 12px;
+    text-align: center;
   }
 }
