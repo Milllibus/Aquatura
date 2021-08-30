@@ -1,0 +1,8 @@
+<div class="card-species small-plant-card">
+  <div class="card-species-infos">
+    <%= link_to plant_path(plant.id) do %>
+      <h2><%= plant.nickname %></h2>
+      <p> <%= plant.specie.name %></p>
+    <% end %>
+  </div>
+</div>
