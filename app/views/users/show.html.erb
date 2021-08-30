@@ -12,7 +12,7 @@
     </div>
   <% end %>
 
-  <div class="cards mt-3">
+  <div class="cards mt-5">
     <% if current_user.plants_need_watering?(1, 0) %>
       <h3>Water this plant</h3>
       <% current_user.plants_to_water(1, 0).each do |plant| %>
