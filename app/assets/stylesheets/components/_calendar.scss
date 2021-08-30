@@ -5,10 +5,17 @@
   left: 0;
   right: 0;
   bottom: 5px;
-  top: 80px;
+  top: 88px;
   overflow-y: scroll;
 }
 
 .tui-full-calendar-month div:nth-child(2){
   height: 100%;
+}
+
+.cal-active {
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  background-color: lightgray;
+  padding: 4px 8px;
 }

@@ -61,23 +61,30 @@ const templates = {
   }
 }
 
-const today = (element, cal) => {
-  element.addEventListener('click', () => {
+const calNavigation = (cal) => {
+  const todayElement = document.querySelector("[data-action='move-today']");
+  const prevElement = document.querySelector("[data-action='move-prev']");
+  const nextElement = document.querySelector("[data-action='move-next']");
+  todayElement.addEventListener('click', (e) => {
     cal.today();
+    e.currentTarget.classList.add('cal-active');
+    prevElement.classList.remove('cal-active');
+    nextElement.classList.remove('cal-active');
   })
-};
-
-const prev = (element, cal) => {
-  element.addEventListener('click', () => {
+  prevElement.addEventListener('click', (e) => {
     cal.prev();
+    e.currentTarget.classList.add('cal-active');
+    todayElement.classList.remove('cal-active');
+    nextElement.classList.remove('cal-active');
   })
-};
-
-const next = (element, cal) => {
-  element.addEventListener('click', () => {
+  nextElement.addEventListener('click', (e) => {
     cal.next();
+    e.currentTarget.classList.add('cal-active');
+    prevElement.classList.remove('cal-active');
+    todayElement.classList.remove('cal-active');
   })
-};
+}
+
 
 const calendar = () => {
   const calElement = document.getElementById('calendarPlant')
@@ -94,15 +101,12 @@ const calendar = () => {
     const schedule = JSON.parse(calElement.dataset.schedule)
     myCal.createSchedules(schedule);
     const calendarTab = document.getElementById('calendar-btn');
+    const todayElement = document.querySelector("[data-action='move-today']");
     calendarTab.addEventListener('click', () => {
       myCal.today();
+      todayElement.classList.add('cal-active');
     })
-    const todayElement = document.querySelector("[data-action='move-today']");
-    today(todayElement, myCal);
-    const prevElement = document.querySelector("[data-action='move-prev']");
-    prev(prevElement, myCal);
-    const nextElement = document.querySelector("[data-action='move-next']");
-    next(nextElement, myCal);
+    calNavigation(myCal);
   };
 }
 
