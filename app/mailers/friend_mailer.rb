@@ -7,7 +7,7 @@ class FriendMailer < ApplicationMailer
   #
   def share_calendar
     @greeting = "Hi"
-
-    mail to: "to@example.org"
+    @friend = params[:mail]
+    mail(to: @friend, subject: 'Could you water my plants?')
   end
 end
