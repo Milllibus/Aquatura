@@ -2,10 +2,28 @@ class UsersController < ApplicationController
   # rubocop:disable Metrics/MethodLength
   def show
     @user = User.find(params[:id])
-    @plants = current_user.plants
     @watering = Watering.new
     authorize @user
+    general_schedule
+  end
+
+  def calendar
+    authorize current_user
+    general_schedule
+  end
+
+  def share_calendar
+    authorize current_user
+    FriendMailer.with(mail: params[:mail]).share_calendar.deliver_now
+    flash[:notice] = "Email sent to #{params[:mail]}"
+    redirect_to calendar_path
+  end
+
+  private
+
+  def general_schedule
     i = 0
+    @plants = current_user.plants
     @general_schedule = []
     @plants.each do |plant|
       plant.dates_of_watering(30).each do |date|
@@ -22,15 +40,5 @@ class UsersController < ApplicationController
       end
     end
   end
-
-  def calendar
-    authorize current_user
-  end
-
-  def share_calendar
-    authorize current_user
-    FriendMailer.with(mail: params[:mail]).share_calendar.deliver_now
-    flash[:notice] = "Email sent to #{params[:mail]}"
-    redirect_to calendar_path
-  end
+  # rubocop:enable Metrics/MethodLength
 end

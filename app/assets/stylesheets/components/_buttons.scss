@@ -19,17 +19,13 @@
   font-size: 18px;
 }
 
-.eplant-button, select {
-  transform: none;
-}
-
-.white-background {
-  background-color: white;
-}
-
 .send-button {
   background-color: $dark-green;
   color: white;
   border-radius: 5px;
   border: 1px solid white;
+}
+
+.friends-btn {
+  margin: 0 auto;
 }
