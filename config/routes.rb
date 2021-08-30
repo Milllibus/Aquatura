@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
   get '/watering_calendar', to: 'users#calendar', as: :calendar
   post '/share_calendar', to: 'users#share_calendar', as: :share_calendar
-  resources :plants, only: %i[show destroy] do
+  resources :plants, only: %i[index show destroy] do
     resources :waterings, only: %i[create]
   end
   get '/species', to: 'species#index'
