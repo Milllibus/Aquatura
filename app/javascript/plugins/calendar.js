@@ -25,24 +25,6 @@ function getTimeTemplate(schedule, isAllDay) {
   return html.join('');
 }
 
-function getGridTitleTemplate(type) {
-  var title = '';
-
-  switch (type) {
-    case 'milestone':
-      title = '<span class="tui-full-calendar-left-content">MILESTONE</span>';
-      break;
-    case 'task':
-      title = '<span class="tui-full-calendar-left-content">TASK</span>';
-      break;
-    case 'allday':
-      title = '<span class="tui-full-calendar-left-content">ALL DAY</span>';
-      break;
-  }
-
-  return title;
-}
-
 function getGridCategoryTemplate(category, schedule) {
   var tpl;
 
@@ -65,14 +47,8 @@ const templates = {
   monthDayname: function (dayname) {
     return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
   },
-  time: function (schedule) {
-    return getTimeTemplate(schedule, false);
-  },
   allday: function (schedule) {
     return getTimeTemplate(schedule, true);
-  },
-  alldayTitle: function () {
-    return getGridTitleTemplate('allday');
   },
   allday: function (schedule) {
     /*
@@ -81,7 +57,6 @@ const templates = {
      * task: function() {...}
      * allday: function() {...}
     */
-
     return getGridCategoryTemplate(schedule.category, schedule);
   }
 }
@@ -118,6 +93,10 @@ const calendar = () => {
     });
     const schedule = JSON.parse(calElement.dataset.schedule)
     myCal.createSchedules(schedule);
+    const calendarTab = document.getElementById('calendar-btn');
+    calendarTab.addEventListener('click', () => {
+      myCal.today();
+    })
     const todayElement = document.querySelector("[data-action='move-today']");
     today(todayElement, myCal);
     const prevElement = document.querySelector("[data-action='move-prev']");
