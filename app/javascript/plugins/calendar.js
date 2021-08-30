@@ -86,7 +86,23 @@ const templates = {
   }
 }
 
+const today = (element, cal) => {
+  element.addEventListener('click', () => {
+    cal.today();
+  })
+};
 
+const prev = (element, cal) => {
+  element.addEventListener('click', () => {
+    cal.prev();
+  })
+};
+
+const next = (element, cal) => {
+  element.addEventListener('click', () => {
+    cal.next();
+  })
+};
 
 const calendar = () => {
   const calElement = document.getElementById('calendarPlant')
@@ -102,18 +118,12 @@ const calendar = () => {
     });
     const schedule = JSON.parse(calElement.dataset.schedule)
     myCal.createSchedules(schedule);
-    const TodayElement = document.querySelector("[data-action='move-today']");
-    TodayElement.addEventListener('click', () => {
-      myCal.today();
-    })
-    const PrevElement = document.querySelector("[data-action='move-prev']");
-    PrevElement.addEventListener('click', () => {
-      myCal.prev();
-    })
-    const NextElement = document.querySelector("[data-action='move-next']");
-    NextElement.addEventListener('click', () => {
-      myCal.next();
-    })
+    const todayElement = document.querySelector("[data-action='move-today']");
+    today(todayElement, myCal);
+    const prevElement = document.querySelector("[data-action='move-prev']");
+    prev(prevElement, myCal);
+    const nextElement = document.querySelector("[data-action='move-next']");
+    next(nextElement, myCal);
   };
 }
 
