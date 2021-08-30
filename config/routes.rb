@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/users/:id', to: 'users#show', as: 'user'
+  get '/users/:id/calendar', to: 'users#calendar'
   resources :plants, only: %i[show destroy] do
     resources :waterings, only: %i[create]
   end

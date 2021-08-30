@@ -5,4 +5,8 @@ class UsersController < ApplicationController
     @watering = Watering.new
     authorize @user
   end
+
+  def calendar
+
+  end
 end
