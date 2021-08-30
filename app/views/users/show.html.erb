@@ -1,8 +1,14 @@
 <div class="container">
-  <div class="weather">
-
+  <div class="welcome-elements">
+    <h1>Hello <%= @user.username.capitalize %>!</h1>
+    <div>
+      <img src="" alt="" id="icon">
+      <h3 id="temperature"></h3>
+    </div>
   </div>
-  <h1>Hello <%= @user.username.capitalize %>!</h1>
+  <div class="weather">
+    <p> Today's weather in <span id="city"></span> is <span id="description">></span></p>
+  </div>
   <%= link_to species_path do %>
     <div class="add-button">
       <%= icon('fas', 'plus-circle') %> Add a new plant
