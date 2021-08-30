@@ -1,6 +1,6 @@
 
 .button-menu {
-  background-color: white;
+  background-color: $dark-green;
   position: sticky;
   margin: auto;
   bottom: 24px;
@@ -13,5 +13,6 @@
   a svg {
     width: 40px;
     height: auto;
+    fill: white;
   }
 }
