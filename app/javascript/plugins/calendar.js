@@ -116,7 +116,7 @@ const generalCalendar = () => {
     let generalCal = new Calendar('#general-calendar', {
       defaultView: 'month',
       month: {
-        visibleWeeksCount: 3 // visible week count in monthly
+        visibleWeeksCount: 4 // visible week count in monthly
       },
       isReadOnly: true,
       scheduleView: true,

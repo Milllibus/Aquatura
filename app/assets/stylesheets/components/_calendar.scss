@@ -13,15 +13,36 @@
   height: 100%;
 }
 
+// navigation
 .cal-active {
-  border: 1px solid lightgray;
-  border-radius: 20px;
+  // border: 1px solid lightgray;
+  // border-radius: 20px;
   background-color: lightgray;
   padding: 4px 8px;
+}
+
+.btn-border {
+  border: 1px solid lightgray;
+  border-radius: 20px;
 }
 
 // General calendar
 #general-calendar {
   margin: 8px;
   overflow-y: scroll;
+}
+
+#general-calendar-menu {
+  padding: 0px 8px;
+}
+
+.user-calendar {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(9, 87, 61, 0.3);
+  border-radius: 8px;
+  padding-top: 12px;
+  margin-top: 24px;
+  h2 {
+    padding: 0px 12px;
+  }
 }
