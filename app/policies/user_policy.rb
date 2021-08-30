@@ -8,4 +8,12 @@ class UserPolicy < ApplicationPolicy
   def show?
     return true
   end
+
+  def calendar?
+    true
+  end
+
+  def share_calendar?
+    true
+  end
 end

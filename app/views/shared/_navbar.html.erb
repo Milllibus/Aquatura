@@ -16,7 +16,7 @@
     <ul class="nav__menu ">
       <li class="nav__item"><%= link_to 'Home', root_path, class: "nav__link" %></li>
       <li class="nav__item"><%= link_to 'My garden', plants_path, class: "nav__link" %></li>
-      <li class="nav__item"><a href="#" class="nav__link">Calendar</a></li>
+      <li class="nav__item"><%= link_to 'Calendar', calendar_path, class: "nav__link" %></li>
       <li class="nav__item"><a href="#" class="nav__link">About</a></li>
       <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
       <% if user_signed_in? %>
