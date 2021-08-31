@@ -8,6 +8,7 @@
     <%= link_to plant_path(plant.id) do %>
       <h2><%= plant.nickname %></h2>
       <p> <%= plant.specie.name %></p>
+      <p><%= plant.plant_energy %></p>
     <% end %>
   </div>
   <div class="create-watering">

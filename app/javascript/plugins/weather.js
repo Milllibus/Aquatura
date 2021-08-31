@@ -30,7 +30,7 @@ const weather = () => {
     icon.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     city.innerText = data.name;
     // get the advice depending on temp
-    const adviceTodisplay = advices.find((adviceObj) => { return 30 >= adviceObj.min && tempCelcius < adviceObj.max });
+    const adviceTodisplay = advices.find((adviceObj) => { return tempCelcius >= adviceObj.min && tempCelcius < adviceObj.max });
     adviceDisplay.innerText = `${adviceTodisplay.advice}`;
   };
 
