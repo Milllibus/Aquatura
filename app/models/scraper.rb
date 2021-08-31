@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'json'
 
 # rubocop:disable Metrics/MethodLength
 class Scraper
@@ -27,4 +28,6 @@ class Scraper
     }
   end
   # rubocop:enable Metrics/MethodLength
+
+
 end

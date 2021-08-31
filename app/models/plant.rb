@@ -31,6 +31,19 @@ class Plant < ApplicationRecord
   end
 
   #auj : need_watering?(1)
-
   # rubocop:enable Metrics/MethodLength
+
+  def plant_energy
+    last_watering = (self.dates_of_watering(30).first.to_date - self.specie.watering_frequency.to_i)
+    before_last_watering = (last_watering - self.specie.watering_frequency.to_i)
+    if last_watering.nil?
+      100
+    elsif before_last_watering.nil?
+      50
+    else
+      0
+    end
+    [0,50,100].sample
+  end
+
 end

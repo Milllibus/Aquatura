@@ -1,22 +1,21 @@
-.add-button {
-  border: 1px solid $gold-yellow;
+.user-button {
   padding: 24px 22px;
   border-radius: 8px;
   margin-top: 20px;
-  color: $gold-yellow;
   font-family: 'Comfortaa';
   font-size: 18px;
+  width: 160px;
+  text-align: center;
 }
 
+.add-button {
+  border: 1px solid $gold-yellow;
+  color: $gold-yellow;
+}
 
 .eplant-button {
   border: 1px solid $dark-green;
-  padding: 24px 22px;
-  border-radius: 8px;
-  margin-top: 20px;
   color: $dark-green;
-  font-family: 'Comfortaa';
-  font-size: 18px;
 }
 
 .send-button {
