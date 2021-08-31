@@ -10,6 +10,7 @@ class FriendMailer < ApplicationMailer
     @friend = params[:mail]
     @duration = params[:duration]
     @plants = params[:user].plants
+    @current_user = params[:user]
     mail(to: @friend, subject: 'Could you water my plants?')
   end
 end

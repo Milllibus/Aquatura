@@ -4,10 +4,15 @@
   <%= @greeting %> dear friend, I am not gonna be home for <%= @duration %> days could you take care of my plants ?
 </p>
 
-<% @plants.each do |plant| %>
-  <div>
-    <h2><%= plant.nickname %></h2>
-    <h3><%= plant.specie.name %></h3>
-    <%= plant.dates_of_watering(@duration.to_i) %>
-  </div>
+<% j = 1 %>
+<% until j == @duration.to_i + 1 do %>
+  <% if @current_user.plants_need_watering?(1, j) %>
+    <div>
+      <h3><%= Date.today + j %></h3>
+      <% @current_user.plants_to_water(1, j).each do |plant| %>
+        <p><%= plant.nickname %> <%= plant.specie.name %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <% j += 1 %>
 <% end %>

@@ -25,7 +25,7 @@ class Plant < ApplicationRecord
 
   def need_watering?(days, days_start = 0)
     # self.dates_of_watering(days).first < Date.today + days_start + days && self.dates_of_watering(days).first > Date.today + days_start
-    self.dates_of_watering(days).any? do |date|
+    self.dates_of_watering(30).any? do |date|
       date.to_date < Date.today + days_start + days && date.to_date >= Date.today + days_start
     end
   end
