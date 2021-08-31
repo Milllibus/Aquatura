@@ -70,3 +70,26 @@
     margin-top: 4px;
   }
 }
+
+.bar{
+    position: relative;
+    border: 2px solid #0d96e0;
+    border-radius: 20px;
+}
+.bar div{
+    position: relative;
+    width: 0;
+    height: 9px;
+    border-radius: 10px;
+    background-color: #0d96e0;
+}
+
+#energy-bar{
+    animation: html-fill 2s forwards;
+}
+
+@keyframes html-fill{
+    100%{
+        width: 90%;
+    }
+}
