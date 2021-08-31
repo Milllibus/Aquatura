@@ -18,6 +18,8 @@
           <%= form_with url: share_calendar_path, method: :post do |form| %>
             <%= form.label :mail, "Friend's email:" %>
             <%= form.text_field :mail %>
+            <%= form.label :duration, "For how long do you leave?" %>
+            <%= form.number_field :duration, in: 1..100, step: 1 %>
             <%= form.submit "Send", class: 'send-button' %>
           <% end %>
         </div>
@@ -31,3 +33,5 @@
   </div>
 
 </div>
+
+<%= console %>
