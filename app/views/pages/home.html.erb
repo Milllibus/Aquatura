@@ -1,4 +1,9 @@
-<div class="container">
-  <h1>Welcome to Aquatura</h1>
+<div class="container d-flex flex-column">
+  <div class="catchphrase">
+    <h1>Welcome to Aquatura!</h1>
+    <h5>Enjoy life, we take care of your plants.</h5>
+    <%= inline_svg_tag("logo-plant.svg") %>
+  </div>
+  <%= link_to 'Sign in / Sign up', user_session_path %>
   <% @skip_button_menu = true %>
 </div>
