@@ -7,7 +7,8 @@
           <p class="m-0"><%= @plant.specie.name %></p>
         </div>
         <div class="plant-watering">
-          <%=  image_tag("watering.png") %>
+          <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(params[:id]), method: :post %>
+          <%# <%=  image_tag("watering.png") %>
           <p> Water in <br> <%= @next_day %> days</p>
         </div>
       </div>

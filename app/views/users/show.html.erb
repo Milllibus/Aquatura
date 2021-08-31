@@ -38,7 +38,7 @@
     <% if current_user.plants_need_watering?(1, 1) %>
       <h3>Water tomorrow</h3>
       <% current_user.plants_to_water(1, 1).each do |plant| %>
-        <%= render 'plant_cards', plant: plant %>
+        <%= render 'plant_cards_tomorrow', plant: plant %>
       <% end %>
     <% end %>
   </div>
