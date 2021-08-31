@@ -33,13 +33,15 @@ import 'tui-time-picker/dist/tui-time-picker.css';
 import { navMenu } from "../plugins/navbar_menu"
 import { bottomMenu } from "../plugins/bottom_menu"
 import { tab_opener } from "../plugins/tabs"
+import { weather } from '../plugins/weather'
 import { calendar, generalCalendar } from "../plugins/calendar"
 
 document.addEventListener('turbolinks:load', () => {
   bottomMenu();
   navMenu();
   tab_opener();
-  calendar();
+  calendar(); 
+  weather();
   generalCalendar();
 });
 
