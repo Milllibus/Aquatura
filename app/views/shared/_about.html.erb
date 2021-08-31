@@ -8,11 +8,11 @@
       </div>
       <div class="water-drops">
         <% if @specie.watering_frequency < 8 %>
-          <p><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i><i class="fas fa-tint" ></i><i class="fas fa-tint"></i></p>
+          <p><i class="fas fa-tint water-drops-select"></i><i class="fas fa-tint water-drops-empty" ></i><i class="fas fa-tint water-drops-empty"></i></p>
         <% elsif @specie.watering_frequency >= 8 && @specie.watering_frequency < 17 %>
-          <p><i class="fas fa-tint" style="color: blue;"></i><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i><i class="fas fa-tint"></i></p>
+          <p><i class="fas fa-tint water-drops-select"></i><i class="fas fa-tint water-drops-select"></i><i class="fas fa-tint water-drops-empty"></i></p>
         <% else %>
-          <p><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i><i class="fas fa-tint" style="color: blue; text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;"></i></p>
+          <p><i class="fas fa-tint water-drops-select"></i><i class="fas fa-tint water-drops-select"></i><i class="fas fa-tint water-drops-select"></i></p>
         <% end %>
       </div>
     </div>
