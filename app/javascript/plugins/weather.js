@@ -1,15 +1,37 @@
 const weather = () => {
 
   const temperature = document.querySelector('#temperature');
-  const description = document.querySelector('#description');
+  // const description = document.querySelector('#description');
   const icon = document.querySelector('#icon');
   const city = document.querySelector('#city');
+  const adviceDisplay = document.querySelector('#advicedisplay');
 
+  const advices = [
+    {
+      min: -20,
+      max: 0,
+      advice: "It's too cold, take care of your plants"
+    },
+    {
+      min: 0,
+      max: 10,
+      advice: "It's cold, keep an eye on your plants"
+    },
+    {
+      min: 30,
+      max: 100,
+      advice: "It's too hot, take care of your plants"
+    },
+  ]
   const updateCard = (data) => {
-    description.innerText = data.weather[0].description;
-    temperature.innerText = `${Math.round(data.main.temp)}°C`;
+    // description.innerText = `${data.weather[0].description} in`;
+    const tempCelcius = Math.round(data.main.temp);
+    temperature.innerText = `${tempCelcius}°C`;
     icon.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     city.innerText = data.name;
+    // get the advice depending on temp
+    const adviceTodisplay = advices.find((adviceObj) => { return 30 >= adviceObj.min && tempCelcius < adviceObj.max });
+    adviceDisplay.innerText = `${adviceTodisplay.advice}`;
   };
 
   navigator.geolocation.getCurrentPosition((data) => {
