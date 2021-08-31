@@ -58,7 +58,15 @@
   }
 
   .create-watering {
-      width: 20%;
-      padding: 4px;
+    width: 20%;
+    padding: 4px;
     }
+}
+
+.small-plant-card {
+  height: 64px;
+  padding: 8px;
+  p {
+    margin-top: 4px;
+  }
 }

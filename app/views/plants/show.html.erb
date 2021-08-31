@@ -18,7 +18,7 @@
       <!-- Tab links -->
       <div class="tab">
         <button class="tablinks top-left active-btn" data-tab="about">About</button>
-        <button class="tablinks" data-tab="calendar">Calendar</button>
+        <button class="tablinks" data-tab="calendar" id="calendar-btn">Calendar</button>
         <button class="tablinks top-right" data-tab="friends">Friends</button>
       </div>
       <!-- Tab contents -->
@@ -30,7 +30,19 @@
         </div>
 
         <div id="calendar" class="tabcontent">
-          <div id="calendarPlant" style="height: 500px;"
+          <div id="calendar-menu">
+            <span id="menu-navi">
+              <button type="button" class="btn btn-default btn-sm move-today btn-border" data-action="move-today">Today</button>
+              <button type="button" class="btn btn-default btn-sm move-day btn-border" data-action="move-prev">
+                <i class="fas fa-arrow-left" data-action="move-prev"></i>
+              </button>
+              <button type="button" class="btn btn-default btn-sm move-day btn-border" data-action="move-next">
+                <i class="fas fa-arrow-right" data-action="move-next"></i>
+              </button>
+            </span>
+            <%# <span id="renderRange" class="render-range"></span> %>
+          </div>
+          <div id="calendarPlant" style="height: 600px;"
               data-schedule="<%= @schedule.to_json %>">
           </div>
         </div>
