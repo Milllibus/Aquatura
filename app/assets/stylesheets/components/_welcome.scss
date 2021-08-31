@@ -1,4 +1,27 @@
 .welcome-elements {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.weather  {
+  display: flex;
+  flex-direction: column;
+  p{
+    margin: 0px;
+  }
+  h3{
+    margin: 0px;
+  }
+  img {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.weather-advice {
+  text-align: center;
+  font-family: $headers-font;
+  color: $gold-yellow;
+  margin: 0px;
 }

@@ -1,20 +1,14 @@
 <div class="container">
+  <p><span id="advicedisplay" class="weather-advice"></span></p>
   <div class="welcome-elements">
     <h1>Hello <%= @user.username.capitalize %>!</h1>
-    <div>
-      <img src="" alt="" id="icon">
+    <div class="weather">
+      <img src="" alt="" id="icon" style="width: 75px; height: 75px;">
       <h3 id="temperature"></h3>
+      <!-- <p><span id="description"></p> -->
+      <p><span id="city"></span></p>
     </div>
   </div>
-  <div class="weather">
-    <p> Today's weather in <span id="city"></span> is <span id="description">></span>. <span id="watering-advice"></span></p>
-  </div>
-  <%= link_to species_path do %>
-    <div class="add-button">
-      <%= icon('fas', 'plus-circle') %> Add a new plant
-    </div>
-  <% end %>
-
   <div class="user-btn">
     <%= link_to species_path do %>
       <div class="add-button user-button">
