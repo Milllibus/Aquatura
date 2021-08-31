@@ -12,7 +12,7 @@ class PlantsController < ApplicationController
     @plant.user = current_user
     @plant.specie = Specie.find(params[:specie_id])
     if @plant.save
-      redirect_to plant_path(@plant)
+      redirect_to user_path(current_user)
     else
       redirect_to specie_path(@plant.specie)
     end

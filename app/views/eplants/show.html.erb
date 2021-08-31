@@ -33,6 +33,20 @@
     </div>
   </div>
 
+  <div class="user-btn">
+    <%= link_to species_path do %>
+      <div class="add-button user-button">
+        <%= icon('fas', 'plus-circle') %> Add a new plant
+      </div>
+    <% end %>
+
+    <%= link_to user_path(current_user.id) do %>
+      <div class="eplant-button user-button">
+        <%= icon('fab', 'pagelines') %> Water your plants
+      </div>
+    <% end %>
+  </div>
+
 </div>
 
 
