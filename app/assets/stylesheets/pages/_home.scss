@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+.green-background {
+  background-color: $dark-green;
+  height: 100vh;
+  position: fixed;
+  h1 {
+    color: white;
+    margin-bottom: 56px;
+  }
+  h5 {
+    color: white;
+    font-family: $body-font;
+  }
+  a {
+    color: white;
+    margin: 24px auto;
+  }
+}
+
+.catchphrase {
+  margin-top: 172px;
+  display: flex;
+  flex-direction: column;
+  svg {
+    fill: white;
+    width: 100px;
+    height: 100px;
+    margin: 32px auto;
+  }
+}
