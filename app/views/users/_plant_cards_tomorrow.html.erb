@@ -10,7 +10,4 @@
       <p> <%= plant.specie.name %></p>
     <% end %>
   </div>
-    <div class="create-watering">
-      <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(plant.id), method: :post %>
-    </div>
 </div>
