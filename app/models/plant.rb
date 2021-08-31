@@ -39,5 +39,6 @@ class Plant < ApplicationRecord
     else
       0
     end
+    [0,50,100].sample
   end
 end

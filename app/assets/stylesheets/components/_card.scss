@@ -70,3 +70,38 @@
     margin-top: 4px;
   }
 }
+
+.bar{
+    position: relative;
+    border: 2px solid $dark-green;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+.bar div{
+    position: relative;
+    width: 0;
+    height: 10px;
+    border-radius: 10px;
+
+}
+
+#energy-bar{
+    animation: energy-fill 2s forwards;
+    background-color: $dark-green;
+}
+
+[data-energy="0"]{
+  --energy-width:0%;
+}
+[data-energy="50"]{
+  --energy-width:50%;
+}
+[data-energy="100"]{
+  --energy-width:100%;
+}
+
+@keyframes energy-fill{
+    100%{
+        width: var(--energy-width);
+    }
+}

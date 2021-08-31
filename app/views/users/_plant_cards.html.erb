@@ -8,8 +8,7 @@
     <%= link_to plant_path(plant.id) do %>
       <h2><%= plant.nickname %></h2>
       <p> <%= plant.specie.name %></p>
-      <p><%= plant.plant_energy %></p>
-      <div class="bar">
+      <div class="bar" data-energy="<%= plant.plant_energy %>">
         <div id="energy-bar"></div>
      </div>
     <% end %>
