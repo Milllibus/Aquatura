@@ -1,4 +1,6 @@
 class PlantsController < ApplicationController
+  layout 'green_background', only: [:show]
+
   def index
     @plants = policy_scope(Plant).where(user_id: current_user)
   end

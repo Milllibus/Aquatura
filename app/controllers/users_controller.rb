@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  layout 'green_background', only: [:calendar]
+
   # rubocop:disable Metrics/MethodLength
   def show
     @user = User.find(params[:id])
