@@ -20,15 +20,19 @@
 }
 
 #plant-img {
-  width: 70vw;
-  border-radius: 20px;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  margin-top: 8px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .plant-watering {
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.6);
     color: black;
-    width: 19%;
+    width: 25%;
     height: 87px;
     padding: 0px;
     display: flex;
@@ -36,15 +40,15 @@
     align-items: center;
     justify-content: center;
     font-size: 11px;
-}
-
-
-.plant-watering img {
-  width: 47%;
-  margin-bottom: 3px;
-}
-
-.plant-watering p {
-  text-align: center;
-  margin-bottom: 0;
+    a {
+      text-align: center;
+    }
+    svg {
+      width: 80%;
+      margin-bottom: 3px;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 0;
+    }
 }

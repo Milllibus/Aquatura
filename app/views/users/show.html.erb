@@ -1,16 +1,21 @@
 <div class="container">
-  <h1>Hello <%= @user.username %>!</h1>
-  <%= link_to species_path do %>
-    <div class="add-button">
-      <%= icon('fas', 'plus-circle') %> Add a new plant
+  <p><span id="advicedisplay" class="weather-advice"></span></p>
+  <div class="welcome-elements">
+    <h1>Hello <%= @user.username.capitalize %>!</h1>
+    <div class="weather">
+      <img src="" alt="" id="icon" style="width: 75px; height: 75px;">
+      <h3 id="temperature"></h3>
+      <!-- <p><span id="description"></p> -->
+      <p><span id="city"></span></p>
     </div>
-  <% end %>
+  </div>
 
-  <%= link_to eplant_path(@user.eplant.id) do %>
-    <div class="eplant-button">
-      <%= icon('fas', 'plus-circle') %> Visit <%= @user.eplant.nickname.capitalize %>
-    </div>
-  <% end %>
+  <div class="user-btn">
+    <%= link_to species_path do %>
+      <div class="add-button user-button">
+        <%= icon('fas', 'plus-circle') %> Add a new plant
+      </div>
+    <% end %>
 
   <div class="cards mt-3">
     <% @plants.each do |plant| %>
@@ -34,7 +39,40 @@
             <%= icon('far', 'trash-alt') %>
           <% end %>
         </div>
+
+    <%= link_to eplant_path(@user.eplant.id) do %>
+      <div class="eplant-button user-button">
+        <%= icon('fab', 'pagelines') %> Visit <%= @user.eplant.nickname.capitalize %>, your eplant
+
       </div>
     <% end %>
+  </div>
+
+  <div class="cards mt-5">
+    <% if current_user.plants_need_watering?(1, 0) %>
+      <h3>Water this plant</h3>
+      <% current_user.plants_to_water(1, 0).each do |plant| %>
+        <%= render 'plant_cards', plant: plant %>
+      <% end %>
+    <% end %>
+    <% if current_user.plants_need_watering?(1, 1) %>
+      <h3>Water tomorrow</h3>
+      <% current_user.plants_to_water(1, 1).each do |plant| %>
+        <%= render 'plant_cards_tomorrow', plant: plant %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="small-cards mt-4">
+    <% if current_user.plants_need_watering?(15, 2) %>
+      <h3>Next plants to water</h3>
+      <% current_user.plants_to_water(15, 2).each do |plant| %>
+        <%= render 'plant_smallcards', plant: plant %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="user-calendar mt-5">
+    <h2>Calendar</h2>
+    <%= render 'general_calendar', general_schedule: @general_schedule %>
   </div>
 </div>

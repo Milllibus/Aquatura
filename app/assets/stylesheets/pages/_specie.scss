@@ -37,13 +37,22 @@
 }
 
 .water-drops {
-  color: rgba(167, 205, 255, 0.438);
+  color: white;
   font-size: 40px;
   i{
     margin-right: 16px;
-    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
 
   }
+}
+
+.water-drops-select {
+  color: blue;
+  text-shadow: #ffffff 1px 1px, #ffffff -1px 1px, #ffffff -1px -1px, #ffffff 1px -1px;
+}
+
+.water-drops-empty {
+  color: white;
+  text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
 }
 
 .exposure-details{

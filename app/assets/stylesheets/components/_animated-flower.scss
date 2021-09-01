@@ -1,16 +1,27 @@
 .eplant-contain {
   position: absolute;
-  margin-top: 250px!important;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
   width:350px;
   height:510px;
 }
 .title-eplant {
-  margin-top: 104px;
-  width:350px;
+  width: 92vw;
+}
+.level-eplant {
+  margin-top: 450px!important;
+  position: absolute;
+  width: 92vw;
+}
+
+.eplant-level {
+  border: 1px solid $dark-green;
+  color: $dark-green;
+  padding: 24px 22px;
+  border-radius: 8px;
+  font-family: 'Comfortaa';
+  font-size: 18px;
+  text-align: center;
 }
 .center {
   color: $dark-green;

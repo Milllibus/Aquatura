@@ -7,7 +7,8 @@
           <p class="m-0"><%= @plant.specie.name %></p>
         </div>
         <div class="plant-watering">
-          <%=  image_tag("watering.png") %>
+          <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(params[:id]), method: :post %>
+          <%# <%=  image_tag("watering.png") %>
           <p> Water in <br> <%= @next_day %> days</p>
         </div>
       </div>
@@ -18,7 +19,7 @@
       <!-- Tab links -->
       <div class="tab">
         <button class="tablinks top-left active-btn" data-tab="about">About</button>
-        <button class="tablinks" data-tab="calendar">Calendar</button>
+        <button class="tablinks" data-tab="calendar" id="calendar-btn">Calendar</button>
         <button class="tablinks top-right" data-tab="friends">Friends</button>
       </div>
       <!-- Tab contents -->
@@ -30,7 +31,19 @@
         </div>
 
         <div id="calendar" class="tabcontent">
-          <div id="calendarPlant" style="height: 500px;"
+          <div id="calendar-menu">
+            <span id="menu-navi">
+              <button type="button" class="btn btn-default btn-sm move-today btn-border" data-action="move-today">Today</button>
+              <button type="button" class="btn btn-default btn-sm move-day btn-border" data-action="move-prev">
+                <i class="fas fa-arrow-left" data-action="move-prev"></i>
+              </button>
+              <button type="button" class="btn btn-default btn-sm move-day btn-border" data-action="move-next">
+                <i class="fas fa-arrow-right" data-action="move-next"></i>
+              </button>
+            </span>
+            <%# <span id="renderRange" class="render-range"></span> %>
+          </div>
+          <div id="calendarPlant" style="height: 600px;"
               data-schedule="<%= @schedule.to_json %>">
           </div>
         </div>
@@ -42,7 +55,7 @@
             <% unless user == current_user %>
               <div class="mb-4 mt-4 friend card-friends">
                 <%= cl_image_tag user.photo.key, class:"avatar-bordered-large" %>
-                <h2 class='mb-0'> <%= user.username %> </h2>
+                <h2 class='mb-0'> <%= user.username.capitalize %> </h2>
               </div>
             <% end %>
           <% end %>
