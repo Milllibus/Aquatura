@@ -34,6 +34,7 @@ import { bottomMenu } from "../plugins/bottom_menu"
 import { tab_opener } from "../plugins/tabs"
 import { weather } from '../plugins/weather'
 import { calendar, generalCalendar } from "../plugins/calendar"
+import { initChatroomCable } from "../channels/chatroom_channel"
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
@@ -43,6 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   calendar();
   weather();
   generalCalendar();
+  initChatroomCable();
 });
 
 

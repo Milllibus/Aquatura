@@ -22,6 +22,7 @@ class PlantsController < ApplicationController
   def show
     @plant = Plant.find(params[:id])
     @specie = @plant.specie
+    @chatroom = Chatroom.where(specie_id: @specie.id).take
     @next_day = (@plant.dates_of_watering(30).first.to_date - Date.today).to_i
     authorize @plant
     i = 0
