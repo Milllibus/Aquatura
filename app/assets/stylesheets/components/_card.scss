@@ -87,21 +87,25 @@
 
 #energy-bar{
     animation: energy-fill 2s forwards;
-    background-color: linear-gradient(0.25turn, #fd1015, #ffae03, #09573d);
+    // background: linear-gradient(0.25turn, #fd1015, #ffae03, #09573d);
 }
 
 [data-energy="30"]{
   --energy-width:30%;
+  --energy-background:#fd1015;
 }
 [data-energy="60"]{
   --energy-width:60%;
+  --energy-background:#ffae03;
 }
 [data-energy="90"]{
   --energy-width:90%;
+  --energy-background:#09573d;
 }
 
 @keyframes energy-fill{
     100%{
         width: var(--energy-width);
+        background: var(--energy-background);
     }
 }
