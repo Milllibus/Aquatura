@@ -19,6 +19,11 @@
             <p> <%= plant.specie.name %></p>
           <% end %>
         </div>
+        <div class="trash">
+          <%= link_to plant, method: :delete, data: { confirm: "Are you sure?" } do %>
+            <%= icon('far', 'trash-alt') %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>

@@ -35,11 +35,6 @@
         <div class="create-watering">
            <%= link_to inline_svg_tag('watering-can.svg'), plant_waterings_path(plant.id), method: :post %>
         </div>
-        <div class="trash">
-          <%= link_to plant, method: :delete, data: { confirm: "Are you sure?" } do %>
-            <%= icon('far', 'trash-alt') %>
-          <% end %>
-        </div>
       </div>
     <% end %>
   </div>
