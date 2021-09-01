@@ -46,9 +46,8 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
-initSweetalert('#sweetalert-water', {
-  title: "You're fresh!",
-  text: "You have successfully watered your plant",
+initSweetalert('#user-message', {
+  title: "Fresh!",
   icon: "success"
 });
 

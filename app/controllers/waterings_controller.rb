@@ -6,6 +6,7 @@ class WateringsController < ApplicationController
     @watering.plant = @plant
     @watering.save
     watering_eplant
+    flash[:user_message] = "#{@plant.nickname} is all wet!!"
     redirect_to user_path(current_user)
   end
 
