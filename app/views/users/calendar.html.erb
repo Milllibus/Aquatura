@@ -14,7 +14,7 @@
             <%= form.text_field :mail %>
             <%= form.label :duration, "For how long do you leave?" %>
             <%= form.number_field :duration, in: 1..100, step: 1 %>
-            <%= form.submit "Send", class: 'send-button' %>
+            <%= form.submit "Send", class: 'send-button', id: 'sweetalert-email' %>
           <% end %>
         </div>
       </div>

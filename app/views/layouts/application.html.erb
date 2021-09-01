@@ -7,6 +7,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="manifest" href="/manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -29,9 +30,10 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
  </head>
 
-  <body>
+  <body data-user-message="<%= @user_message %>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/user_messages' %>
 
     <%= yield %>
     <%= render 'shared/button_menu' unless @skip_button_menu %>

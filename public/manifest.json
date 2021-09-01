@@ -1,0 +1,16 @@
+{
+  "short_name": "AQUA",
+  "name": "Aquatura",
+  "icons": [
+    {
+      "src": "aquatura-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#09573D",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#09573D"
+}
