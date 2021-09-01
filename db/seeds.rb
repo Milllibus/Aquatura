@@ -181,20 +181,6 @@ user4.photo.attach(io: photo4, filename: "jardiniere.jpg", content_type: 'image/
 
 users = [user1, user2, user3, user4]
 
-locations = ['155	Rue Commandant Caroline Aigle	13090	Aix-en-Provence', "7	Rue de l'Abbé Bremond	13090	Aix-en-Provence",
-             "1 Rue Achille Emperaire	13090	Aix-en-Provence", "1	Rue des Alizés	13090	Aix-en-Provence",
-             "6	Allée des Amandiers	13100	Aix-en-Provence", "8	Passage Agard	13100	Aix-en-Provence",
-             "35	Chemin Albert Guigou	13290	Aix-en-Provence", "8	Traverse de l'Aigle d'Or	13100	Aix-en-Provence",
-             "2	Place Aimé Gazel	13290	Aix-en-Provence", "2	Avenue Albert Baudoin	13090	Aix-en-Provence"]
-
-n = 0
-
-users.each do |user|
-  user.address = locations[n]
-  user.save
-  n += 1
-end
-
 if User.count == 4
   puts "4 users created"
 else

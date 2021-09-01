@@ -25,6 +25,7 @@ function getTimeTemplate(schedule, isAllDay) {
   return html.join('');
 }
 
+// specific to plant calendar
 function getGridCategoryTemplate(category, schedule) {
   var tpl;
 
@@ -61,6 +62,47 @@ const templates = {
   }
 }
 
+// Specific to general calendar
+function getGridCategoryTemplateG(category, schedule) {
+  var tpl;
+
+  switch (category) {
+    case 'milestone':
+      tpl = '<span class="calendar-font-icon ic-milestone-b"></span> <span style="background-color: ' + schedule.bgColor + '">' + schedule.title + '</span>';
+      break;
+    case 'task':
+      tpl = '#' + schedule.title;
+      break;
+    case 'allday':
+      tpl = "<i class='fas fa-leaf'></i>";
+      break;
+  }
+
+  return tpl;
+}
+
+const templatesG = {
+  monthDayname: function (dayname) {
+    return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+  },
+  allday: function (schedule) {
+    return getTimeTemplate(schedule, true);
+  },
+  allday: function (schedule) {
+    /*
+     * use another functions instead of 'schedule'
+     * milestone: function() {...}
+     * task: function() {...}
+     * allday: function() {...}
+    */
+    return getGridCategoryTemplateG(schedule.category, schedule);
+  },
+  popupDetailBody: function (schedule) {
+    return schedule.body;
+  },
+}
+
+// Navigation
 const calNavigation = (cal) => {
   const todayElement = document.querySelector("[data-action='move-today']");
   const prevElement = document.querySelector("[data-action='move-prev']");
@@ -121,7 +163,7 @@ const generalCalendar = () => {
       isReadOnly: true,
       scheduleView: true,
       useDetailPopup: true,
-      template: templates
+      template: templatesG
     });
     const generalSchedule = JSON.parse(calElement.dataset.general);
     generalCal.createSchedules(generalSchedule);
