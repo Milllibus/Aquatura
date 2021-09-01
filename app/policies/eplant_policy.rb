@@ -9,4 +9,8 @@ class EplantPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def create?
+    !user.eplant
+  end
 end
