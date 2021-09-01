@@ -29,8 +29,6 @@
 	height: 0;
 	width: 0;
 	position: absolute;
-	top: 50px;
-	left: 20px;
 }
 .circle{
 	height: 44px;
@@ -76,7 +74,7 @@
 	border-radius: 50%;
 	background-color: rgba(0, 0, 0,0.1);
 	bottom: 95px;
-	left: 135px;
+	left: 165px;
 }
 .pot{
 	position: absolute;
@@ -86,7 +84,7 @@
 	border-right: 12px solid transparent;
 	border-top: 60px solid #FF7043;
 	bottom: 104px;
-	left: 138px;
+	left: 168px;
 	z-index: 2;
 }
 .pot:before{
@@ -117,7 +115,7 @@
 	background-color: #c5f;
 	border-radius: 5px;
 	bottom: 235px;
-	left: 65px;
+	left: 95px;
 	opacity: 0;
 	box-shadow: inset -9px 0 15px #cc70ff;
 	animation: show 10s linear;
@@ -159,7 +157,7 @@
 	border-radius: 50% 50% 0 0;
 	border-right: 4px dashed #0bf;
 	bottom: 180px;
-	left: 115px;
+	left: 145px;
 	z-index: 1;
 	opacity: 0;
 	animation: water 10s linear;
