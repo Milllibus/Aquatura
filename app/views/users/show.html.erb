@@ -16,6 +16,7 @@
         <%= icon('fas', 'plus-circle') %> Add a new plant
       </div>
     <% end %>
+  </div>
 
   <div class="cards mt-3">
     <% @plants.each do |plant| %>
@@ -39,11 +40,13 @@
             <%= icon('far', 'trash-alt') %>
           <% end %>
         </div>
+      </div>
+    <% end %>
+  </div>
 
     <%= link_to eplant_path(@user.eplant.id) do %>
       <div class="eplant-button user-button">
         <%= icon('fab', 'pagelines') %> Visit <%= @user.eplant.nickname.capitalize %>, your eplant
-
       </div>
     <% end %>
   </div>
