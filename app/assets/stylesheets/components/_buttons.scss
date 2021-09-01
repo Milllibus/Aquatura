@@ -23,11 +23,16 @@
 .add-button {
   color: white;
   background-color: $gold-yellow;
+  flex-shrink: 1;
 }
 
 .eplant-button {
   color: white;
   background-color: $dark-green;
+  flex-shrink: 1;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .send-button {
