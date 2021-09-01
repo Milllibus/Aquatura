@@ -12,7 +12,8 @@
     "stimulus": "^2.0.0",
     "sweetalert": "^2.1.2",
     "tui-calendar": "^1.13.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpacker-pwa": "^0.1.2"
   },
   "version": "0.1.0",
   "devDependencies": {
