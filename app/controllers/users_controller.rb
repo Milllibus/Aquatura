@@ -33,10 +33,13 @@ class UsersController < ApplicationController
         plant_schedule = {
           id: i,
           calendarId: '2',
-          title: plant.nickname,
+          title: plant.specie.name,
+          body: "Please water #{plant.nickname.capitalize}, #{plant.specie.name}",
           category: 'allday',
           start: date,
-          bgColor: '#FFAE03'
+          color: '#FFAE03',
+          bgColor: 'white',
+          borderColor: 'white'
         }
         @general_schedule << plant_schedule
       end
