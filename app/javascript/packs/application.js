@@ -34,6 +34,7 @@ import { bottomMenu } from "../plugins/bottom_menu"
 import { tab_opener } from "../plugins/tabs"
 import { weather } from '../plugins/weather'
 import { calendar, generalCalendar } from "../plugins/calendar"
+import { initChatroomCable } from "../channels/chatroom_channel"
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
@@ -43,12 +44,33 @@ document.addEventListener('turbolinks:load', () => {
   calendar();
   weather();
   generalCalendar();
+  initChatroomCable();
 });
 
 
 initSweetalert('#user-message', {
   title: "Sickening, no?!",
   icon: "success"
+});
+
+window.addEventListener('load', () => {
+  navigator.serviceWorker.register('/service-worker.js').then(registration => {
+    console.log('ServiceWorker registered: ', registration);
+
+    var serviceWorker;
+    if (registration.installing) {
+      serviceWorker = registration.installing;
+      console.log('Service worker installing.');
+    } else if (registration.waiting) {
+      serviceWorker = registration.waiting;
+      console.log('Service worker installed & waiting.');
+    } else if (registration.active) {
+      serviceWorker = registration.active;
+      console.log('Service worker active.');
+    }
+  }).catch(registrationError => {
+    console.log('Service worker registration failed: ', registrationError);
+  });
 });
 
 import "controllers"
