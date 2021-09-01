@@ -1,21 +1,33 @@
+.user-btn {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+  a {
+    width: 50%;
+  }
+  a:nth-child(1) {
+    margin-right: 5%;
+  }
+}
+
 .user-button {
-  padding: 24px 22px;
+  padding: 1em 1em;
   border-radius: 8px;
   margin-top: 20px;
   font-family: 'Comfortaa';
   font-size: 18px;
-  width: 160px;
   text-align: center;
 }
 
+
 .add-button {
-  border: 1px solid $gold-yellow;
-  color: $gold-yellow;
+  color: white;
+  background-color: $gold-yellow;
 }
 
 .eplant-button {
-  border: 1px solid $dark-green;
-  color: $dark-green;
+  color: white;
+  background-color: $dark-green;
 }
 
 .send-button {
@@ -26,5 +38,8 @@
 }
 
 .friends-btn {
-  margin: 0 auto;
+  margin: 24px auto;
+  width: 270px;
+  background-color: white;
+  color: $dark-green;
 }

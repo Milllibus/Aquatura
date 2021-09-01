@@ -1,10 +1,4 @@
-<div class="container d-flex flex-column">
-
-  <div class="share-calendar d-flex align-items-center">
-    <button type="button" class="eplant-button friends-btn" data-toggle="modal" data-target="#shareCalendarModal">
-      <i class="fas fa-user-friends"></i> Ask a friend some help!
-    </button>
-  </div>
+<div class="container d-flex flex-column mt-0">
   <div class="modal fade" id="shareCalendarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -27,9 +21,15 @@
     </div>
   </div>
 
-  <div class="user-calendar">
+  <div class="user-calendar mt-4">
     <h2>Calendar</h2>
     <%= render 'general_calendar', general_schedule: @general_schedule %>
   </div>
 
+  <div class="share-calendar d-flex align-items-center">
+    <button type="button" class="friends-btn user-button" data-toggle="modal" data-target="#shareCalendarModal">
+      <i class="fas fa-user-friends"></i> Share your calendar
+    </button>
+  </div>
+<% @skip_button_menu = true %>
 </div>
