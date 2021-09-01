@@ -17,10 +17,35 @@
       </div>
     <% end %>
 
-    <%= link_to eplant_path(@user.eplant.id) do %>
-      <div class="eplant-button user-button">
-        <%= icon('fab', 'pagelines') %> Visit <%= @user.eplant.nickname.capitalize %>, your eplant
+    <% if @user.eplant %>
+      <%= link_to eplant_path(@user.eplant.id) do %>
+        <div class="eplant-button user-button">
+          <%= icon('fab', 'pagelines') %> Visit <%= @user.eplant.nickname.capitalize %>, your eplant
+        </div>
+      <% end %>
+    <% else %>
+      <div class="modal fade" id="CreateEplantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create your Eplant</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for @eplant do |form| %>
+                <%= form.label :nickname, "How would you like to name your Eplant?" %>
+                <%= form.text_field :nickname %>
+                <%= form.submit "Yeah!", class: 'send-button' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
+        <div class="eplant-button user-button" data-toggle="modal" data-target="#CreateEplantModal">
+          <%= icon('fab', 'pagelines') %> Create your eplant
+        </div>
     <% end %>
   </div>
 
