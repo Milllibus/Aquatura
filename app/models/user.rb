@@ -14,5 +14,4 @@ class User < ApplicationRecord
   def plants_to_water(days, days_start = 0)
     self.plants.select { |plant| plant.need_watering?(days, days_start) }
   end
-
 end

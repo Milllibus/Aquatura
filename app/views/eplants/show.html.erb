@@ -2,7 +2,16 @@
   <h2>Hello, I'm <%= @eplant.nickname.capitalize %>!</h2>
 </div>
 
-<div class="container position-relative">
+<div class="container">
+
+  <div class="level-eplant">
+    <div class="eplant-level">
+      <div class="center">
+        <span class="center"> Level <%= @eplant.level %> </span>
+      </div>
+    </div>
+  </div>
+
   <div class="eplant-contain">
     <div class="sun">
       <div class="sunrays"></div>
@@ -25,12 +34,19 @@
     </div>
   </div>
 
-  <div class="container level-eplant">
-    <div class="eplant-level">
-      <div class="center">
-        <span class="center"> Level <%= @eplant.level %> </span>
+  <h5 class="text-center">Make <%= @eplant.nickname.capitalize %> grow:</h5>
+  <div class="user-btn mb-3">
+    <%= link_to species_path do %>
+      <div class="add-button user-button">
+        <%= icon('fas', 'plus-circle') %> Add a new plant
       </div>
-    </div>
+    <% end %>
+
+    <%= link_to user_path(current_user.id) do %>
+      <div class="eplant-button user-button">
+        <%= icon('fab', 'pagelines') %> Water your plants
+      </div>
+    <% end %>
   </div>
 
 </div>

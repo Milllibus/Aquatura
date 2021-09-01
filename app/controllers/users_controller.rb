@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  layout 'green_background', only: [:calendar]
+
   # rubocop:disable Metrics/MethodLength
   def show
     @user = User.find(params[:id])
@@ -14,7 +16,7 @@ class UsersController < ApplicationController
 
   def share_calendar
     authorize current_user
-    FriendMailer.with(mail: params[:mail]).share_calendar.deliver_now
+    FriendMailer.with(mail: params[:mail], duration: params[:duration], user: current_user).share_calendar.deliver_now
     flash[:notice] = "Email sent to #{params[:mail]}"
     redirect_to calendar_path
   end

@@ -14,10 +14,11 @@
   </head>
 
   <body>
-    <div class="home-background">
-      <%= render 'shared/flashes' %>
-
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <div class="green-background">
       <%= yield %>
+      <%= render 'shared/button_menu' unless @skip_button_menu %>
     </div>
   </body>
 </html>
