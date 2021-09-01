@@ -36,14 +36,17 @@ class Plant < ApplicationRecord
   def plant_energy
     last_watering = (self.dates_of_watering(30).first.to_date - self.specie.watering_frequency.to_i)
     before_last_watering = (last_watering - self.specie.watering_frequency.to_i)
+    before_before_last_watering = (before_last_watering - self.specie.watering_frequency.to_i)
     if last_watering.nil?
-      100
+      90
     elsif before_last_watering.nil?
-      50
+      60
+    elsif before_before_last_watering.nil?
+      30
     else
       0
     end
-    [0,50,100].sample
+    [30,60,90].sample
   end
 
 end
