@@ -49,16 +49,17 @@
         </div>
 
         <div id="friends" class="tabcontent">
-          <h3>These friends have the same plant!</h4>
-          <% users = User.all %>
-          <% users.each do |user| %>
-            <% unless user == current_user %>
-              <div class="mb-4 mt-4 friend card-friends">
-                <%= cl_image_tag user.photo.key, class:"avatar-bordered-large" %>
-                <h2 class='mb-0'> <%= user.username.capitalize %> </h2>
+          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+            <% @chatroom.messages.each do |message| %>
+              <div class="message-container" id="message-<%= message.id %>">
+                <i class="author">
+                  <span><%= message.user.nickname %></span>
+                  <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                </i>
+                <p><%= message.content %></p>
               </div>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
