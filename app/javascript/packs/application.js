@@ -8,7 +8,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -35,14 +34,21 @@ import { bottomMenu } from "../plugins/bottom_menu"
 import { tab_opener } from "../plugins/tabs"
 import { weather } from '../plugins/weather'
 import { calendar, generalCalendar } from "../plugins/calendar"
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   bottomMenu();
   navMenu();
   tab_opener();
-  calendar(); 
+  calendar();
   weather();
   generalCalendar();
+});
+
+
+initSweetalert('#user-message', {
+  title: "Sickening, no?!",
+  icon: "success"
 });
 
 import "controllers"

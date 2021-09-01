@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :init_user_message
   before_action :configure_permitted_parameters, if: :devise_controller?
+  
   include Pundit
 
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -18,6 +20,10 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def init_user_message
+    @user_message = flash[:user_message] || nil
   end
 
   def default_url_options
