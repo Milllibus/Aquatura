@@ -34,6 +34,7 @@ import { bottomMenu } from "../plugins/bottom_menu"
 import { tab_opener } from "../plugins/tabs"
 import { weather } from '../plugins/weather'
 import { calendar, generalCalendar } from "../plugins/calendar"
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   bottomMenu();
@@ -42,6 +43,13 @@ document.addEventListener('turbolinks:load', () => {
   calendar();
   weather();
   generalCalendar();
+});
+
+
+initSweetalert('#sweetalert-water', {
+  title: "You're fresh!",
+  text: "You have successfully watered your plant",
+  icon: "success"
 });
 
 import "controllers"
