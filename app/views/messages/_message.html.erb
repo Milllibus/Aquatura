@@ -1,7 +1,11 @@
-<div class="message-container" id="message-<%= message.id %>">
+<div class="message-container <%= "align-right" if message.user == current_user %>" id="message-<%= message.id %>">
   <div class="message-display">
     <i class="author">
-      <span><%= message.user.username.capitalize %></span>
+      <% if message.user == current_user %>
+      <span class="gold-yellow"><%= message.user.username.capitalize %></span>
+      <% else %>
+      <span class="dark-green"><%= message.user.username.capitalize %></span>
+      <% end %>
     </i>
     <p><%= message.content %></p>
     <div class="message-date">

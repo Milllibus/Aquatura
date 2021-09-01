@@ -2,17 +2,19 @@
   <div class="chatroom">
     <div class="chatroom-header">
       <h5>#<%= @chatroom.name %></h5>
-      <p>Questions about <%= @chatroom.name %>? Ask away, a fellow plant lover might know the answer.</p>
+      <p>Questions? Ask away, a fellow plant lover might know the answer.</p>
     </div>
-    <div>
-      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.each do |message| %>
-          <%= render "messages/message", message: message %>
-        <% end %>
-      </div>
-
-    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Your message..." %>
-    <% end %>
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+    <div id="write-messages">
+      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Your message..." %>
+      <% end %>
+    </div>
   </div>
 </div>
+
+<% @skip_button_menu = true %>
