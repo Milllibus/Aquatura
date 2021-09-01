@@ -1,5 +1,7 @@
 class SpeciesController < ApplicationController
 
+  layout 'green_background', only: [:show]
+
   def show
     @specie = Specie.find(params[:id])
     @plant = Plant.new
