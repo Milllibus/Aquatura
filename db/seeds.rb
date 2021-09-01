@@ -23,6 +23,13 @@ else
   puts "error deleting plants"
 end
 
+Chatroom.delete_all
+if Chatroom.count.zero?
+  puts "All chatrooms have been destroyed"
+else
+  puts "error deleting chatrooms"
+end
+
 Specie.delete_all
 if Specie.count.zero?
   puts "All species have been destroyed"
@@ -62,6 +69,9 @@ species_search.each do |specie|
   new_specie.exposure = exposures.sample
   new_specie.watering_frequency = rand(2..10)
   new_specie.save
+  new_chatroom = Chatroom.new(name: new_specie.name)
+  new_chatroom.specie = new_specie
+  new_chatroom.save
   species << new_specie
 end
 
@@ -136,6 +146,12 @@ else
   puts "error creating species"
 end
 
+if Chatroom.count == species_search.size
+  puts "#{species.size} chatrooms created"
+else
+  puts "error creating species"
+end
+
 # 4 users
 
 user1 = User.create(
@@ -178,22 +194,7 @@ user4 = User.create(
 photo4 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc28QMcjpqPRltBVZ_mX6pRU-mkFKr8difo1fgu0apPwGx9BikMBPOw96GF2VZgx4zXHY&usqp=CAU")
 user4.photo.attach(io: photo4, filename: "jardiniere.jpg", content_type: 'image/jpg')
 
-
 users = [user1, user2, user3, user4]
-
-locations = ['155	Rue Commandant Caroline Aigle	13090	Aix-en-Provence', "7	Rue de l'Abbé Bremond	13090	Aix-en-Provence",
-             "1 Rue Achille Emperaire	13090	Aix-en-Provence", "1	Rue des Alizés	13090	Aix-en-Provence",
-             "6	Allée des Amandiers	13100	Aix-en-Provence", "8	Passage Agard	13100	Aix-en-Provence",
-             "35	Chemin Albert Guigou	13290	Aix-en-Provence", "8	Traverse de l'Aigle d'Or	13100	Aix-en-Provence",
-             "2	Place Aimé Gazel	13290	Aix-en-Provence", "2	Avenue Albert Baudoin	13090	Aix-en-Provence"]
-
-n = 0
-
-users.each do |user|
-  user.address = locations[n]
-  user.save
-  n += 1
-end
 
 if User.count == 4
   puts "4 users created"
