@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Aquatura, take care of your plants</title>
-    <%= favicon_link_tag 'favicon.ico' %>
+    <title>Aquatura</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,10 +13,11 @@
   </head>
 
   <body>
-    <div class="home-background">
-      <%= render 'shared/flashes' %>
-
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <div class="green-background">
       <%= yield %>
+      <%= render 'shared/button_menu' unless @skip_button_menu %>
     </div>
   </body>
 </html>
