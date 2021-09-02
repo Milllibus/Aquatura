@@ -1,0 +1,11 @@
+<div class="message-container">
+  <div class="message-display">
+    <i class="author">
+      <span><%= message.user.username.capitalize %></span>
+    </i>
+    <p><%= message.content %></p>
+    <div class="message-date">
+      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+    </div>
+  </div>
+</div>

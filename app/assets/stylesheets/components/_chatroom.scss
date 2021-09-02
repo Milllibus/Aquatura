@@ -30,6 +30,9 @@
   .align-right {
     display: flex;
     justify-content: flex-end;
+    .author {
+      color: $gold-yellow;
+    }
   }
 }
 
@@ -54,12 +57,7 @@
   }
   .author {
     font-size: 16px;
-    .dark-green {
-      color: $dark-green;
-    }
-    .gold-yellow {
-      color: $gold-yellow;
-    }
+    color: $dark-green;
   }
   .message-date {
     color: rgb(135, 135, 135);
