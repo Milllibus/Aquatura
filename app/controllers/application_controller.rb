@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
   def init_style_variable
     @navbar_visible = true
     @green_background = false
+    @home_background = false
   end
 
   def skip_pundit?
