@@ -34,18 +34,15 @@ class Plant < ApplicationRecord
     self.waterings.order(water_date: :desc).first
   end
 
-
   def plant_energy
-    days_that_i_last_water = Date.today.to_date - self.waterings.order(created_at: :desc).first.created_at.to_date - 2
+    plant = self
+    days_that_i_last_water = Date.today - plant.waterings.order(water_date: :desc).first.water_date - 2
 
-    # last_watering_date = (self.dates_of_watering(30).first.to_date - self.specie.watering_frequency.to_i)
-    # before_last_watering = (last_watering_date - self.specie.watering_frequency.to_i)
-    # before_before_last_watering = (before_last_watering - self.specie.watering_frequency.to_i)
-    if days_that_i_last_water < self.specie.watering_frequency.to_i
+    if days_that_i_last_water < plant.specie.watering_frequency.to_i
       90
-    elsif days_that_i_last_water < 2 * self.specie.watering_frequency.to_i
+    elsif days_that_i_last_water < 2 * plant.specie.watering_frequency.to_i
       60
-    elsif days_that_i_last_water < 3 * self.specie.watering_frequency.to_i
+    elsif days_that_i_last_water < 3 * plant.specie.watering_frequency.to_i
       40
     else
       20
