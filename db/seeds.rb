@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 require 'csv'
 require 'open-uri'
@@ -21,6 +14,13 @@ if Plant.count.zero?
   puts "All plants have been destroyed"
 else
   puts "error deleting plants"
+end
+
+Message.delete_all
+if Message.count.zero?
+  puts "All messages have been destroyed"
+else
+  puts "error deleting messages"
 end
 
 Chatroom.delete_all
@@ -51,13 +51,11 @@ else
   puts "error deleting users"
 end
 
-# species
-
 exposures = ['sun', 'half', 'shaddow']
-species_search = ['cactus', 'dahlia', 'jasmine', 'Safari Sunset Aloe', 'geranium caliente', 'ficus',
-                  'Bougainvillea', 'azalea', 'Painted Lady Echeveria', 'Ruffles Echeveria',
+species_search = ['cactus', 'dahlia', 'jasmine', 'Safari Sunset Aloe', 'geranium caliente', 'Gold',
+                  'Myrtle', 'azalea', 'Painted Lady Echeveria', 'Ruffles Echeveria',
                   'Rojo Congo Philodendron', 'Elephant Ear', 'Southern Splendor Cordyline',
-                  'Bunny Ears', 'Yellow Groove Bamboo', 'Picturata Aucuba', 'Pink Parade Camellia',
+                  'Agapanthus', 'Yellow Groove Bamboo', 'Picturata Aucuba', 'Pink Parade Camellia',
                   'Cherie Hibiscus', 'Pindo Palm', 'White Swan Coneflower']
 
 species = []
@@ -69,81 +67,19 @@ species_search.each do |specie|
   new_specie.exposure = exposures.sample
   new_specie.watering_frequency = rand(2..10)
   new_specie.save
-  new_chatroom = Chatroom.new(name: new_specie.name)
-  new_chatroom.specie = new_specie
-  new_chatroom.save
   species << new_specie
 end
-
-# specie1 = Specie.create(
-#   name: 'orchidee',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
-
-# specie2 = Specie.create(
-#   name: 'ortie',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
-
-# specie3 = Specie.create(
-#   name: 'jasmin',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
-
-# specie4 = Specie.create(
-#   name: 'rose',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
-
-# specie5 = Specie.create(
-#   name: 'petunia',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
-# specie6 = Specie.create(
-#   name: 'basilic',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
-# specie7 = Specie.create(
-#   name: 'mint',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
-# specie8 = Specie.create(
-#   name: 'margarita',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
-# specie9 = Specie.create(
-#   name: 'sunflower',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
-# specie10 = Specie.create(
-#   name: 'camelia',
-#   exposure: exposures.sample,
-#   watering_frequency: rand(0..30),
-#   description: "Le chanvre est une des premières plantes domestiquées par l'homme, au Néolithique, probablement en Asie. Il a ensuite accompagné migrations et conquêtes pour se répandre sur tous les continents. Jadis, le Cannabis, était considéré comme une plante magique associée aux pratiques magiques. L'usage rituel du cannabis comme psychotrope est attesté il y a 2500 ans à Jirzankal, Chine."
-# )
 
 if Specie.count == species_search.size
   puts "#{species.size} species created"
 else
   puts "error creating species"
+end
+
+species.each do |specie|
+  new_chatroom = Chatroom.new(name: specie.name)
+  new_chatroom.specie = specie
+  new_chatroom.save
 end
 
 if Chatroom.count == species_search.size
@@ -156,43 +92,42 @@ end
 
 user1 = User.create(
   email: 'thais@lewagon.fr',
-  username: 'thaïsW',
+  username: 'thaïs',
   password: '123456',
   password_confirmation: '123456'
 )
-photo1 = URI.open("https://st4.depositphotos.com/13194036/25333/i/1600/depositphotos_253334960-stock-photo-sexy-young-woman-in-white.jpg")
-user1.photo.attach(io: photo1, filename: "jardiniere.jpg", content_type: 'image/jpg')
-
+photo1 = URI.open("https://res.cloudinary.com/dwhcqxkxh/image/upload/v1630572169/IMG-20210902-WA0002_vgjpgq.jpg")
+user1.photo.attach(io: photo1, filename: "thais.jpg", content_type: 'image/jpg')
 
 user2 = User.create(
-  email: 'adrien@lewagon.fr',
-  username: 'adrïenW',
+  email: 'adrianna@lewagon.fr',
+  username: 'adrianna',
   password: '123456',
   password_confirmation: '123456'
 )
-photo2 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb8vtP5ykKZ0gm3D1TDOaCcfDtsNQtuAlI2swJV00yFHTeXPPsxoTdhZ_7ppELQQdsyrk&usqp=CAU")
-user2.photo.attach(io: photo2, filename: "jardiniere.jpg", content_type: 'image/jpg')
+photo2 = URI.open("https://res.cloudinary.com/dwhcqxkxh/image/upload/v1630572147/Image_d_iOS_1_knkoow.jpg")
+user2.photo.attach(io: photo2, filename: "adrianna.jpg", content_type: 'image/jpg')
 
 
 
 user3 = User.create(
   email: 'rogerio@lewagon.fr',
-  username: 'rogerioW',
+  username: 'rogerio',
   password: '123456',
   password_confirmation: '123456'
 )
-photo3 = URI.open("https://2.bp.blogspot.com/-jLaNDufIHts/V9Ht3RUdGDI/AAAAAAAADxA/Ts5ipmR4chwEnFDR5pAdIhFOJLRXwAEHgCLcB/s1600/guestpost16_adatseng05.jpg")
-user3.photo.attach(io: photo3, filename: "jardiniere.jpg", content_type: 'image/jpg')
+photo3 = URI.open("https://res.cloudinary.com/dwhcqxkxh/image/upload/v1630572162/86491589_ydj8ij.jpg")
+user3.photo.attach(io: photo3, filename: "rogerio.jpg", content_type: 'image/jpg')
 
 
 user4 = User.create(
   email: 'augustin@lewagon.fr',
-  username: 'augustinW',
+  username: 'augustin',
   password: '123456',
   password_confirmation: '123456'
 )
-photo4 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc28QMcjpqPRltBVZ_mX6pRU-mkFKr8difo1fgu0apPwGx9BikMBPOw96GF2VZgx4zXHY&usqp=CAU")
-user4.photo.attach(io: photo4, filename: "jardiniere.jpg", content_type: 'image/jpg')
+photo4 = URI.open("https://res.cloudinary.com/dwhcqxkxh/image/upload/v1630572065/6B4857E3-D2AA-466A-8C25-EDA8C7E05904_efgofp.jpg")
+user4.photo.attach(io: photo4, filename: "augustin.jpg", content_type: 'image/jpg')
 
 users = [user1, user2, user3, user4]
 
@@ -205,7 +140,7 @@ end
 # 4 Eplants
 
 eplant1 = Eplant.new(
-  level: rand(0..100),
+  level: 45,
   nickname: 'lola'
 )
 
@@ -251,6 +186,20 @@ exposure = %w[sun half shade]
   plant.user = users.sample
   plant.specie = species.sample
   plant.save
+  count = 10
+  10.times do
+    watering = Watering.new
+    watering.plant = plant
+    if watering.save
+      puts watering.created_at.to_date
+      days = plant.specie.watering_frequency * count
+      puts watering.created_at.to_date - days
+      date_u = ((watering.created_at).to_date - days).to_time
+      watering.created_at = date_u
+      count -= 1
+      watering.save
+    end
+  end
 end
 
 if Plant.count == 20
@@ -259,5 +208,10 @@ else
   puts "error creating plants"
 end
 
-# Waterings ?
+if Watering.count == 200
+  puts "200 waterings created"
+else
+  puts "error creating waterings"
+end
+
 puts "xoxo, GossipGirl.."
