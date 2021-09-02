@@ -1,7 +1,10 @@
 <div class="container">
   <p><span id="advicedisplay" class="weather-advice"></span></p>
   <div class="welcome-elements">
-    <h1>Hello <%= @user.username.capitalize %>!</h1>
+    <div class="welcome-name">
+      <h1>Hello </h1>
+      <h1><%= @user.username.capitalize %>!</h1>
+    </div>
     <div class="weather">
       <img src="" alt="" id="icon" style="width: 75px; height: 75px;">
       <h3 id="temperature"></h3>
@@ -49,7 +52,7 @@
     <% end %>
   </div>
 
-  <div class="cards mt-5">
+  <div class="cards mt-4">
     <% if current_user.plants_need_watering?(1, 0) %>
       <h3>Water this plant</h3>
       <% current_user.plants_to_water(1, 0).each do |plant| %>

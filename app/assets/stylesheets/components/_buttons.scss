@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 4%;
+
   a {
     width: 50%;
   }
@@ -15,7 +16,7 @@
   border-radius: 8px;
   margin-top: 20px;
   font-family: 'Comfortaa';
-  font-size: 18px;
+  font-size: 4vw;
   text-align: center;
 }
 
@@ -23,16 +24,21 @@
 .add-button {
   color: white;
   background-color: $gold-yellow;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   flex-shrink: 1;
 }
 
 .eplant-button {
   color: white;
   background-color: $dark-green;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  font-size: 4vw;
   flex-shrink: 1;
   &:hover {
     cursor: pointer;
   }
+
 }
 
 .send-button {
