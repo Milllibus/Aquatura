@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  before_action :init_user_message
+  before_action :init_user_message, :init_style_variable
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
   include Pundit
 
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -16,7 +16,17 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :address])
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
+
   private
+
+  def init_style_variable
+    @navbar_visible = true
+    @green_background = false
+  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
@@ -26,7 +36,4 @@ class ApplicationController < ActionController::Base
     @user_message = flash[:user_message] || nil
   end
 
-  def default_url_options
-    { host: ENV["DOMAIN"] || "localhost:3000" }
-  end
 end

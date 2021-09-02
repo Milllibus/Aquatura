@@ -1,5 +1,4 @@
 class PlantsController < ApplicationController
-  layout 'green_background', only: [:show]
 
   def index
     @plants = policy_scope(Plant).where(user_id: current_user)
@@ -20,6 +19,7 @@ class PlantsController < ApplicationController
 
   # rubocop:disable Metrics/MethodLength
   def show
+    @green_background = true
     @plant = Plant.find(params[:id])
     @specie = @plant.specie
     @chatroom = Chatroom.where(specie_id: @specie.id).take

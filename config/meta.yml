@@ -1,5 +1,5 @@
 meta_product_name: "AQUATURA"
 meta_title: "AQUATURA - take care of your plants"
 meta_description: "This app will help you to take care of your plants and improve their lifetime"
-meta_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc28QMcjpqPRltBVZ_mX6pRU-mkFKr8difo1fgu0apPwGx9BikMBPOw96GF2VZgx4zXHY&usqp=CAU" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_image: "https://res.cloudinary.com/dwhcqxkxh/image/upload/v1630570959/aquatura-image_whders.jpg" # should exist in `app/assets/images/`
+twitter_account: "@thaisderodez"   # required for Twitter Cards
