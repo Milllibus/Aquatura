@@ -4,6 +4,7 @@ class WateringsController < ApplicationController
     @watering = Watering.new
     authorize @watering
     @watering.plant = @plant
+    @watering.water_date = Date.today
     @watering.save
     watering_eplant
     flash[:user_message] = "#{@plant.nickname.capitalize} has been watered!!"

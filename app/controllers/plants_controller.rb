@@ -44,7 +44,7 @@ class PlantsController < ApplicationController
         calendarId: '1',
         title: "<i class='fas fa-tint'></i>",
         category: 'allday',
-        start: watering.created_at,
+        start: watering.water_date,
         bgColor: '#09573D',
         color: 'white'
       }
