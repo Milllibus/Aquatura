@@ -49,7 +49,7 @@ document.addEventListener('turbolinks:load', () => {
 
 
 initSweetalert('#user-message', {
-  title: "Sickening, no?!",
+  title: "👍🏿",
   icon: "success"
 });
 
