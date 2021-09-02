@@ -1,5 +1,4 @@
-class EplantPolicy < ApplicationPolicy
-
+class ChatroomPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -7,10 +6,6 @@ class EplantPolicy < ApplicationPolicy
   end
 
   def show?
-    true
-  end
-
-  def create?
-    !user.eplant
+    return true
   end
 end

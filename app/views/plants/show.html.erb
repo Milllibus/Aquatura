@@ -59,6 +59,11 @@
               </div>
             <% end %>
           <% end %>
+          <%= link_to chatroom_path(@chatroom.id) do %>
+            <div class="eplant-button user-button">
+              <%= icon('fab', 'pagelines') %> Ask a question
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

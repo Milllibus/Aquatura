@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # rubocop:disable Metrics/MethodLength
   def show
     @user = User.find(params[:id])
+    @eplant = @user.eplant ? nil : Eplant.new
     @watering = Watering.new
     authorize @user
     general_schedule
