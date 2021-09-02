@@ -1,5 +1,5 @@
 class Watering < ApplicationRecord
   belongs_to :plant
 
-  validates :created_at, uniqueness: { scope: :plant }
+  validates :water_date, uniqueness: { scope: :plant }
 end

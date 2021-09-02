@@ -13,8 +13,8 @@ class Plant < ApplicationRecord
     dates = []
     plant = self
     frequency = plant.specie.watering_frequency
-    first_date = plant.waterings.empty? ? Date.today : plant.waterings.max_by(&:created_at).created_at.to_date + frequency
-    first_date = Date.today if first_date.to_date - Date.today < 0
+    first_date = plant.waterings.empty? ? Date.today : plant.waterings.max_by(&:water_date).water_date + frequency
+    first_date = Date.today if (first_date - Date.today).negative?
     dates << first_date.to_time
     ((period_length / frequency) - 1).to_i.times do
       date = (dates.last.to_date + frequency)
@@ -30,8 +30,10 @@ class Plant < ApplicationRecord
     end
   end
 
-  #auj : need_watering?(1)
-  # rubocop:enable Metrics/MethodLength
+  def last_watering
+    self.waterings.order(water_date: :desc).first
+  end
+
 
   def plant_energy
     last_watering = (self.dates_of_watering(30).first.to_date - self.specie.watering_frequency.to_i)
