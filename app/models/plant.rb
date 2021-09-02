@@ -36,17 +36,20 @@ class Plant < ApplicationRecord
 
   def plant_energy
     plant = self
-    days_that_i_last_water = Date.today - plant.waterings.order(water_date: :desc).first.water_date - 2
-
-    if days_that_i_last_water < plant.specie.watering_frequency.to_i
+    if plant.waterings == []
       90
-    elsif days_that_i_last_water < 2 * plant.specie.watering_frequency.to_i
-      60
-    elsif days_that_i_last_water < 3 * plant.specie.watering_frequency.to_i
-      40
     else
-      20
+      days_that_i_last_water = Date.today - plant.waterings.order(water_date: :desc).first.water_date - 2
+
+      if days_that_i_last_water < plant.specie.watering_frequency.to_i
+        90
+      elsif days_that_i_last_water < 2 * plant.specie.watering_frequency.to_i
+        60
+      elsif days_that_i_last_water < 3 * plant.specie.watering_frequency.to_i
+        40
+      else
+        20
+      end
     end
   end
-
 end
