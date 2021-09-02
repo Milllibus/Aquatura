@@ -1,11 +1,10 @@
 class SpeciesController < ApplicationController
 
-  layout 'green_background', only: [:show]
-
   def show
     @specie = Specie.find(params[:id])
     @plant = Plant.new
     authorize @specie
+    @green_background = true
   end
 
   def index

@@ -13,6 +13,7 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
     <meta property="og:type" content="website" />
@@ -31,11 +32,13 @@
  </head>
 
   <body data-user-message="<%= @user_message %>">
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/user_messages' %>
+    <%= render 'shared/navbar' if @navbar_visible %>
+    <div class=<%= "green-background" if @green_background %>>
+      <%= render 'shared/flashes' %>
+      <%= render 'shared/user_messages' %>
 
-    <%= yield %>
-    <%= render 'shared/button_menu' unless @skip_button_menu %>
+      <%= yield %>
+      <%= render 'shared/button_menu' unless @skip_button_menu %>
+    </div>
   </body>
 </html>

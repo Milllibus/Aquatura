@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  layout 'green_background', only: [:calendar]
 
   # rubocop:disable Metrics/MethodLength
   def show
@@ -13,6 +12,7 @@ class UsersController < ApplicationController
   def calendar
     authorize current_user
     general_schedule
+    @green_background = true
   end
 
   def share_calendar
