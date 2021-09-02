@@ -1,7 +1,15 @@
-<div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.username %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
-  <p><%= message.content %></p>
+<div class="message-container <%= "align-right" if message.user == current_user %>" id="message-<%= message.id %>">
+  <div class="message-display">
+    <i class="author">
+      <% if message.user == current_user %>
+      <span class="gold-yellow"><%= message.user.username.capitalize %></span>
+      <% else %>
+      <span class="dark-green"><%= message.user.username.capitalize %></span>
+      <% end %>
+    </i>
+    <p><%= message.content %></p>
+    <div class="message-date">
+      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+    </div>
+  </div>
 </div>
