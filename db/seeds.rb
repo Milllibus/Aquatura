@@ -96,17 +96,17 @@ user1 = User.create(
   password: '123456',
   password_confirmation: '123456'
 )
-photo1 = URI.open("https://st4.depositphotos.com/13194036/25333/i/1600/depositphotos_253334960-stock-photo-sexy-young-woman-in-white.jpg")
-user1.photo.attach(io: photo1, filename: "jardiniere.jpg", content_type: 'image/jpg')
+photo1 = URI.open("https://res.cloudinary.com/dwhcqxkxh/image/upload/v1630572169/IMG-20210902-WA0002_vgjpgq.jpg")
+user1.photo.attach(io: photo1, filename: "thais.jpg", content_type: 'image/jpg')
 
 user2 = User.create(
-  email: 'adrien@lewagon.fr',
-  username: 'adrïenW',
+  email: 'adrianna@lewagon.fr',
+  username: 'adriannaW',
   password: '123456',
   password_confirmation: '123456'
 )
-photo2 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb8vtP5ykKZ0gm3D1TDOaCcfDtsNQtuAlI2swJV00yFHTeXPPsxoTdhZ_7ppELQQdsyrk&usqp=CAU")
-user2.photo.attach(io: photo2, filename: "jardiniere.jpg", content_type: 'image/jpg')
+photo2 = URI.open("https://res.cloudinary.com/dwhcqxkxh/image/upload/v1630572147/Image_d_iOS_1_knkoow.jpg")
+user2.photo.attach(io: photo2, filename: "adrianna.jpg", content_type: 'image/jpg')
 
 
 
@@ -116,8 +116,8 @@ user3 = User.create(
   password: '123456',
   password_confirmation: '123456'
 )
-photo3 = URI.open("https://2.bp.blogspot.com/-jLaNDufIHts/V9Ht3RUdGDI/AAAAAAAADxA/Ts5ipmR4chwEnFDR5pAdIhFOJLRXwAEHgCLcB/s1600/guestpost16_adatseng05.jpg")
-user3.photo.attach(io: photo3, filename: "jardiniere.jpg", content_type: 'image/jpg')
+photo3 = URI.open("https://res.cloudinary.com/dwhcqxkxh/image/upload/v1630572162/86491589_ydj8ij.jpg")
+user3.photo.attach(io: photo3, filename: "rogerio.jpg", content_type: 'image/jpg')
 
 
 user4 = User.create(
@@ -126,8 +126,8 @@ user4 = User.create(
   password: '123456',
   password_confirmation: '123456'
 )
-photo4 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc28QMcjpqPRltBVZ_mX6pRU-mkFKr8difo1fgu0apPwGx9BikMBPOw96GF2VZgx4zXHY&usqp=CAU")
-user4.photo.attach(io: photo4, filename: "jardiniere.jpg", content_type: 'image/jpg')
+photo4 = URI.open("https://res.cloudinary.com/dwhcqxkxh/image/upload/v1630572065/6B4857E3-D2AA-466A-8C25-EDA8C7E05904_efgofp.jpg")
+user4.photo.attach(io: photo4, filename: "augustin.jpg", content_type: 'image/jpg')
 
 users = [user1, user2, user3, user4]
 
@@ -186,6 +186,11 @@ exposure = %w[sun half shade]
   plant.user = users.sample
   plant.specie = species.sample
   plant.save
+  10.times do
+    watering = Watering.new
+    watering.plant = plant
+    watering.save
+  end
 end
 
 if Plant.count == 20
@@ -194,5 +199,10 @@ else
   puts "error creating plants"
 end
 
-# Waterings ?
+if Watering.count == 200
+  puts "200 waterings created"
+else
+  puts "error creating waterings"
+end
+
 puts "xoxo, GossipGirl.."
