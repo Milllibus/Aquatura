@@ -92,7 +92,7 @@ end
 
 user1 = User.create(
   email: 'thais@lewagon.fr',
-  username: 'thaïsW',
+  username: 'thaïs',
   password: '123456',
   password_confirmation: '123456'
 )
@@ -101,7 +101,7 @@ user1.photo.attach(io: photo1, filename: "thais.jpg", content_type: 'image/jpg')
 
 user2 = User.create(
   email: 'adrianna@lewagon.fr',
-  username: 'adriannaW',
+  username: 'adrianna',
   password: '123456',
   password_confirmation: '123456'
 )
@@ -112,7 +112,7 @@ user2.photo.attach(io: photo2, filename: "adrianna.jpg", content_type: 'image/jp
 
 user3 = User.create(
   email: 'rogerio@lewagon.fr',
-  username: 'rogerioW',
+  username: 'rogerio',
   password: '123456',
   password_confirmation: '123456'
 )
@@ -122,7 +122,7 @@ user3.photo.attach(io: photo3, filename: "rogerio.jpg", content_type: 'image/jpg
 
 user4 = User.create(
   email: 'augustin@lewagon.fr',
-  username: 'augustinW',
+  username: 'augustin',
   password: '123456',
   password_confirmation: '123456'
 )
@@ -140,7 +140,7 @@ end
 # 4 Eplants
 
 eplant1 = Eplant.new(
-  level: rand(0..100),
+  level: 45,
   nickname: 'lola'
 )
 
@@ -194,7 +194,8 @@ exposure = %w[sun half shade]
       puts watering.created_at.to_date
       days = plant.specie.watering_frequency * count
       puts watering.created_at.to_date - days
-      watering.created_at = ((watering.created_at).to_date - days).to_time
+      date_u = ((watering.created_at).to_date - days).to_time
+      watering.created_at = date_u
       count -= 1
       watering.save
     end
