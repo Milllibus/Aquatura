@@ -41,12 +41,9 @@ class Plant < ApplicationRecord
       90
     elsif before_last_watering.nil?
       60
-    elsif before_before_last_watering.nil?
-      30
     else
-      0
+      30
     end
-    [30,60,90].sample
   end
 
 end
