@@ -186,10 +186,18 @@ exposure = %w[sun half shade]
   plant.user = users.sample
   plant.specie = species.sample
   plant.save
+  count = 10
   10.times do
     watering = Watering.new
     watering.plant = plant
-    watering.save
+    if watering.save
+      puts watering.created_at.to_date
+      days = plant.specie.watering_frequency * count
+      puts watering.created_at.to_date - days
+      watering.created_at = ((watering.created_at).to_date - days).to_time
+      count -= 1
+      watering.save
+    end
   end
 end
 
