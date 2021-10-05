@@ -1,60 +1,65 @@
-.user-btn {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 4%;
+@media all {
+  .user-btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4%;
 
-  a {
-    width: 50%;
-  }
-  a:nth-child(1) {
-    margin-right: 5%;
-  }
-}
-
-.user-button {
-  padding: 1em 1em;
-  border-radius: 8px;
-  margin-top: 20px;
-  font-family: 'Comfortaa';
-  font-size: 4vw;
-  text-align: center;
-}
-
-
-.add-button {
-  color: white;
-  background-color: $gold-yellow;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  flex-shrink: 1;
-}
-
-.eplant-button {
-  color: white;
-  background-color: $dark-green;
-
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  font-size: 4vw;
-  flex-shrink: 1;
-  &:hover {
-    cursor: pointer;
+    a {
+      width: 50%;
+    }
+    a:nth-child(1) {
+      margin-right: 5%;
+    }
   }
 
+  .user-button {
+    border-radius: 8px;
+    margin-top: 20px;
+    font-family: 'Comfortaa';
+    text-align: center;
+    padding: 1em 1em;
+    font-size: 4vw;
+  }
+
+  .add-button {
+    color: white;
+    background-color: $gold-yellow;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    flex-shrink: 1;
+  }
+
+  .eplant-button {
+    color: white;
+    background-color: $dark-green;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    flex-shrink: 1;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .send-button {
+    background-color: $dark-green;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+  }
+
+  .friends-btn {
+    margin: 24px auto;
+    width: 270px;
+    background-color: white;
+    color: $dark-green;
+  }
+
+  .fa-trash-alt {
+    color: $dark-green;
+  }
 }
 
-.send-button {
-  background-color: $dark-green;
-  color: white;
-  border-radius: 5px;
-  border: 1px solid white;
-}
-
-.friends-btn {
-  margin: 24px auto;
-  width: 270px;
-  background-color: white;
-  color: $dark-green;
-}
-
-.fa-trash-alt {
-  color: $dark-green;
+@media(min-width: 480px) {
+  .user-button {
+  padding: 10%;
+  font-size: 1.5vw;
+  }
 }

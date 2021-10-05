@@ -32,15 +32,17 @@
  </head>
 
   <body data-user-message="<%= @user_message %>">
-    <%= render 'shared/navbar' if @navbar_visible %>
-    <div class=<%= "home-background" if @home_background %>>
-    <div class=<%= "green-background" if @green_background %>>
-      <%= render 'shared/flashes' %>
-      <%= render 'shared/user_messages' %>
+    <div class="mobile-contour">
+      <%= render 'shared/navbar' if @navbar_visible %>
+      <div class=<%= "home-background" if @home_background %>>
+      <div class=<%= "green-background" if @green_background %>>
+        <%= render 'shared/flashes' %>
+        <%= render 'shared/user_messages' %>
 
-      <%= yield %>
-      <%= render 'shared/button_menu' unless @skip_button_menu %>
-    </div>
+        <%= yield %>
+        <%= render 'shared/button_menu' unless @skip_button_menu %>
+      </div>
+      </div>
     </div>
   </body>
 </html>
