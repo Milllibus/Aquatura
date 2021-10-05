@@ -55,6 +55,15 @@
   .fa-trash-alt {
     color: $dark-green;
   }
+
+  .login-btn {
+    background-color: $dark-green;
+    color: white;
+    border-radius: 8px;
+    &:hover {
+      color: $gold-yellow;
+    }
+  }
 }
 
 @media(min-width: 480px) {
