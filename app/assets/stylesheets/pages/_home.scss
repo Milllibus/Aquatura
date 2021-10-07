@@ -17,6 +17,13 @@
   }
 }
 
+@media(min-width: 480px){
+  .home-background{
+    width: inherit;
+    height: inherit;
+  }
+}
+
 .catchphrase {
   margin-top: 172px;
   display: flex;

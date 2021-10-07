@@ -1,0 +1,20 @@
+@media(min-width: 480px) {
+  .mobile-contour {
+  height: 896px;
+  width: 414px;
+  outline: 15px solid black;
+  border-radius: 16px;
+  box-shadow: 40px 10px 30px rgba(0, 0, 0, 0.15);
+  margin: 20px auto;
+  position: relative;
+  overflow: scroll;
+  }
+}
+
+
+
+
+.desktop-button {
+  font-size: 2vw;
+  padding: 10%;
+}
